@@ -1,6 +1,8 @@
 import time
 import os
+
 #base stats prior to class selection
+
 health = 10
 stamina = 10
 mana = 10
@@ -29,7 +31,7 @@ print ("So you're "+pcpronoun+" "+ pcname+".\nIs that correct?")
 time.sleep(1)
 question1 = input()
 
-#checking name is correct and fucking with the player a little
+#checking name is correct and fucking with the players name 
 if question1 == "no" or question1 == "No":
     print("Oh is that so, then what is your name then?")
     pcname = input()
