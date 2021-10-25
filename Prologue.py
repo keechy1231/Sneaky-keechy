@@ -1,5 +1,5 @@
 import time
-
+import os
 
 #this will be our text based game 
 #get a PC name logged and recorded
@@ -7,6 +7,7 @@ print ("welcome adventurer")
 time.sleep(1)
 print ("where should we begin?")
 time.sleep(1)
+
 print ("First off, how about a pronoun, do you prefer mr, miss or something else?")
 pcpronoun = input()
 time.sleep(1)
@@ -31,3 +32,5 @@ elif question1 != "yes" or question1 !="Yes" or question1 !="no" or question1 !=
     pcname = pcpronoun+" Ignoramus"
 time.sleep(1)
 print("So are you ready for an adventure then? \nOf course you are why else would you be here "+pcname)
+
+celear
