@@ -11,7 +11,7 @@ print ("how about a name. \nWhat should i call you")
 pcname = input()
 
 time.sleep(5)
-print ("So you'r "+ pcname+".\n Is that correct?")
+print ("So you're "+ pcname+".\n Is that correct?")
 if input()=
 
 
