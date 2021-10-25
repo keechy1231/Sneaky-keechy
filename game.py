@@ -3,7 +3,7 @@
 import os
 import time #importing time 
 
-print ("Welcome to our first little game\n\n\n\n\n Created by Keechy and Snealy_like_a_Clam")
+print ("Welcome to our first little game\n\n\n\n\nCreated by Keechy and Snealy_like_a_Clam")
 time.sleep(5)
 
 os.system("clear")
