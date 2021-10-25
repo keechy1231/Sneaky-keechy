@@ -1,0 +1,6 @@
+#try to make an inventory
+#try to make a levlling system?
+#how big will the map be?
+#how do you build a map? 
+#draw a map first? 
+#dungeon?? #overworld??
