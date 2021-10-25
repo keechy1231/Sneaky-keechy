@@ -41,7 +41,7 @@ elif question1 != "yes" or question1 !="Yes" or question1 !="no" or question1 !=
 time.sleep(1)
 
 #class selection
-Print("next question for you then "+ pcname+", what is your class?\n1.Warrior\n2.Thief\n3.Mage\n4.Priest\n5.Paladin")
+print("next question for you then " + pcname + ", what is your class?\n1.Warrior\n2.Thief\n3.Mage\n4.Priest\n5.Paladin")
 question2 = input()
 
 #warrior stats
@@ -78,7 +78,7 @@ elif question2 == "Priest" or question2 == "priest" or question2 == "4":
     mana = mana * 4
     stealth = stealth * 1
     strength = strength * 3
-    print("")
+    print("A Priest you will be!\nYour toughness and mana are you best assets but you have a little stamina if you need to run from a fight.\nJust dont try to hide, your like a holy flashlight.")
 
 #paladin stats
 elif question2 == "Paladin" or question2 == "paladin" or question2 == "5":
