@@ -19,11 +19,11 @@ print (mystring)
 
 
 time.sleep(5)
-os.system("clS")
+print ("\n "* 100) 
 
 input ("In this game you will encounter random events against random enemies, everytime you play this game it will play different. \n\n(Press Enter to Begin)")
 
-os.system("clS") 
+print ("\n" *100) 
 
 from Prologue import Prologue #imorting Prologue into this
 #bring Prologue to the game
