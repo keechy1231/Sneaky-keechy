@@ -11,27 +11,28 @@ Estrength = 10
 
 
 class Imp:
-	Ehealth * 1
-	Estamina * 1
-	Emana * 1 
-	Estealth * 1
-	Estrength * 1
+	Ehealth = Ehealth * 0.5
+	Estamina = Ehealth * 0.2
+	Emana = Emana * 0.2 
+	Estealth = Estealth * 0.2
+	Estrength = Estrength * 0.2
 	
 	
 class Dwarf:
-	Ehealth * 2
-	Estamina * 2
-	Emana * 2 
-	Estealth * 2
-	Estrength * 2
+	Ehealth = Ehealth * 2
+	Estamina = Ehealth * 2
+	Emana = Emana * 2
+	Estealth = Estealth * 2
+	Estrength = Estrength * 2
 
 
 class Ogre:
-	Ehealth * 3
-	Estamina * 3
-	Emana * 3
-	Estealth * 3
-	Estrength * 3
+	EEhealth = Ehealth * 3
+	Estamina = Ehealth * 3
+	Emana = Emana * 0
+	Estealth = Estealth * 3
+	Estrength = Estrength * 3
+	
 	
 	
 

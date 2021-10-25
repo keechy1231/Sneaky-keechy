@@ -53,6 +53,7 @@ if question2 == "Warrior" or question2 == "warrior" or question2 == "1":
     mana = mana * 1
     stealth = stealth * 2
     strength = strength * 4
+    pcclass = Warrior #add to all player classes
     print("A warrior you will be!\nYour health and strength are you best assets but you can still hide as a last resort.\nI wouldn't put any faith in you magic skills though if I were you.")
 
 #thief stats
@@ -62,6 +63,7 @@ elif question2 == "Thief" or question2 == "thief" or question2 == "2":
     mana = mana * 3
     stealth = stealth * 5
     strength = strength * 2
+
     print("A thief you will be!\nYour stealth and stamina are you best assets but you can still fight as a last resort.\nUnfortuanately for you though, you are very squishy.")
 
 #mage stats
