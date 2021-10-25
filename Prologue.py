@@ -6,7 +6,9 @@ stamina = 10
 mana = 10
 stealth = 10
 strength = 10
-#this will be our text based game 
+
+#this will be our text based game
+
 #get a PC name logged and recorded
 print ("welcome adventurer")
 time.sleep(1)
