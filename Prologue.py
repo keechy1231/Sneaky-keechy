@@ -82,11 +82,11 @@ elif question2 == "Priest" or question2 == "priest" or question2 == "4":
 
 #paladin stats
 elif question2 == "Paladin" or question2 == "paladin" or question2 == "5":
-    health = health * 5
-    stamina = stamina * 4
+    health = health * 3
+    stamina = stamina * 2
     mana = mana * 4
     stealth = stealth * 1
-    strength = strength * 4
-    print("")
+    strength = strength * 5
+    print("A Paladin you will be!\nYour strength and mana are you best assets but you have okay cardio after all that jogging.\nYou are not really the best at hiding in that plate mail though *$%CLING?!@CLANG@#*.")
 
 print("So are you ready for an adventure then? \nOf course you are why else would you be here "+pcname+".")
