@@ -1,6 +1,8 @@
 import time
 import os
 
+
+
 #base stats prior to class selection
 
 health = 10
@@ -95,4 +97,4 @@ elif question2 == "Paladin" or question2 == "paladin" or question2 == "5":
     strength = strength * 5
     print("A Paladin you will be!\nYour strength and mana are you best assets but you have okay cardio after all that jogging.\nYou are not really the best at hiding in that plate mail though *$%CLING?!@CLANG@#*.")
 
-print("So are you ready for an adventure then? \nOf course you are why else would you be here "+pcname+".")
+print("So are you ready for an adventure then? \nOf course you are why else would you be here " + pcname + ".")
