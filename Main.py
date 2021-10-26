@@ -14,9 +14,9 @@ def typing(text):
 		
 def clrscrn():
 	if os.name == 'posix':
-		os.system("clear")
+		_=os.system("clear")
 	else:
-		os.syste,('cls')
+		_=os.system('cls')
 		
 time.sleep(4)		
 

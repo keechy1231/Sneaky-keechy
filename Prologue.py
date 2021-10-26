@@ -12,9 +12,9 @@ def typing(text):
 	
 def clrscrn():
 	if os.name == 'posix':
-		_os.system("clear")
+		_=os.system("clear")
 	else:
-		_os.syste,('cls')
+		_=os.system('cls')
 
 #base stats prior to class selection
 health = 10
@@ -80,7 +80,7 @@ elif question2 == "Thief" or question2 == "thief" or question2 == "2":
     typing ("You are a thief!\nHiding in the shadows and striking unseen.\nUnfortuanately for you though, you are very squishy./n")
 
 #soilder stats
-elif question2 == "Paladin" or question2 == "paladin" or question2 == "5":
+elif question2 == "Soilder" or question2 == "soilder" or question2 == "3":
     health = health * 4
     stamina = stamina * 2
     stealth = stealth * 3
