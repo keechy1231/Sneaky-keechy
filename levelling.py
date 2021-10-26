@@ -10,7 +10,7 @@ def typing(text):
 		time.sleep(0.05)
 
 lvl = 1
-xp = 24
+xp = 14
 lvlnext = 10
 
 while xp >= lvlnext:
@@ -18,7 +18,7 @@ while xp >= lvlnext:
 	xp = xp - lvlnext
 	lvlnext = round(lvlnext * 1.2)
 	
-print ("Current level:", lvl)
-typing ("Current xp:", xp)
-typing ("To next level:", lvlnext)
+typing ("Current level:" +str(lvl)+"\n")
+print ("Current xp:" + str(round(xp / lvlnext,2)*100)+"%")
+typing ("To next level:"+ str(lvlnext)+"\n")
 
