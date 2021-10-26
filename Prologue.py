@@ -5,11 +5,7 @@ import sys
 
 
 #defineds presets
-def typing(text):
-	for character in text:
-		sys.stdout.write(character)
-		sys.stdout.flush()
-		time.sleep(0.05)
+
 	
 def clrscrn():
 	if os.name == 'posix':
@@ -69,7 +65,7 @@ if question2 == "Warrior" or question2 == "warrior" or question2 == "1":
     stealth = stealth * 2
     strength = strength * 3
     pcclass = "Warrior" #add to all player classes
-    typing ("You are a warrior! \nYou can go all night with your health and stamina.\nI wouldnt try sneaking around though too much if i were you./n")
+    typing ("You are a warrior! \nYou can go all night with your health and stamina.\nI wouldnt try sneaking around though too much if i were you.\n")
 
 #thief stats
 elif question2 == "Thief" or question2 == "thief" or question2 == "2":
@@ -78,7 +74,7 @@ elif question2 == "Thief" or question2 == "thief" or question2 == "2":
     stealth = stealth * 5
     strength = strength * 4
     pcclass = "Thief"
-    typing ("You are a thief!\nHiding in the shadows and striking unseen.\nUnfortuanately for you though, you are very squishy./n")
+    typing ("You are a thief!\nHiding in the shadows and striking unseen.\nUnfortuanately for you though, you are very squishy.\n")
 
 #soilder stats
 elif question2 == "Soilder" or question2 == "soilder" or question2 == "3":
@@ -87,14 +83,14 @@ elif question2 == "Soilder" or question2 == "soilder" or question2 == "3":
     stealth = stealth * 3
     strength = strength * 5
     pcclass = "Soilder"
-    typing ("You are a soilder.\nTake hits and hit back harder, you can do that.\nJust like a dwarf your a natural sprinter, no marathons for you./n")
+    typing ("You are a soilder.\nTake hits and hit back harder, you can do that.\nJust like a dwarf your a natural sprinter, no marathons for you.\n")
 
 typing ("Well then my new " + pcclass + ", I hope you are happy with the results you have here as you cant change them.\n")
 time.sleep(2)
-print("Health:     " + health)
-print("Stamina:    " + stamina)
-print("Stealth:    " + stealth)
-print("Strength:   " + strength)
+print("Health:     " + str(health))
+print("Stamina:    " + str(stamina))
+print("Stealth:    " + str(stealth))
+print("Strength:   " + str(strength))
 
 time.sleep(5)
 clrscrn()
