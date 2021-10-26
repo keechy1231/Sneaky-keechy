@@ -3,6 +3,7 @@ import time
 import os
 import sys
 
+
 #defineds presets
 def typing(text):
 	for character in text:
@@ -21,6 +22,7 @@ health = 10
 stamina = 10
 stealth = 10
 strength = 10
+pcclass = "villager"
 
 #get a PC name logged and recorded
 typing ("Welcome adventurer.\n")
@@ -59,7 +61,7 @@ time.sleep(1)
 clrscrn()
 
 #class selection
-typing("next question for you then " + pcname + ", what is your class?\n1.Warrior\n2.Thief\n3.Soilder")
+typing("next question for you then " + pcname + ", what is your class?\n1.Warrior\n2.Thief\n3.Soilder\n\n\n")
 question2 = input()
 
 #warrior stats
@@ -77,6 +79,7 @@ elif question2 == "Thief" or question2 == "thief" or question2 == "2":
     stamina = stamina * 3
     stealth = stealth * 5
     strength = strength * 4
+    pcclass = Thief
     typing ("You are a thief!\nHiding in the shadows and striking unseen.\nUnfortuanately for you though, you are very squishy./n")
 
 #soilder stats
@@ -85,11 +88,18 @@ elif question2 == "Soilder" or question2 == "soilder" or question2 == "3":
     stamina = stamina * 2
     stealth = stealth * 3
     strength = strength * 5
+    pcclass = Soilder
     typing ("You are a soilder.\nTake hits and hit back harder, you can do that.\nJust like a dwarf your a natural sprinter, no marathons for you./n")
 
+typing ("Well then my new " + pcclass + ", I hope you are happy with the results you have here as you cant change them.\n")
+time.sleep(2)
+print("Health   "+health)
+print("Stamina  "+stamina)
+print("Stealth  "+stealth)
+print("Strength "+strength)
 
 time.sleep(5)
 clrscrn()
 
-typing("So are you ready for an adventure then? \nOf course you are why else would you be here " + pcname + ".")
+typing("So are you ready for an adventure then? \nOf course you are why else would you be here " + pcname + ".\n")
 input()
