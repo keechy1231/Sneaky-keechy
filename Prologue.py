@@ -97,3 +97,4 @@ clrscrn()
 
 typing("So are you ready for an adventure then? \nOf course you are why else would you be here " + pcname + ".\n")
 input()
+
