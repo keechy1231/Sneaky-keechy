@@ -5,7 +5,11 @@ import sys
 
 
 #defineds presets
-
+def typing(text):
+	for character in text:
+		sys.stdout.write(character)
+		sys.stdout.flush()
+		time.sleep(0.05)
 	
 def clrscrn():
 	if os.name == 'posix':
