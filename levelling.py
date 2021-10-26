@@ -18,7 +18,8 @@ while xp >= lvlnext:
 	xp = xp - lvlnext
 	lvlnext = round(lvlnext * 1.2)
 	
-typing ("Current level:" +str(lvl)+"\n")
-print ("Current xp:" + str(round(xp / lvlnext,2)*100)+"%")
-typing ("To next level:"+ str(lvlnext)+"\n")
+typing ("Current Level:             " + str(lvl)+"\n")
+#typing ("Current Level EXP:         " + str(round(xp / lvlnext,2)*100)+"%\n") #my original code - one below looks cleaner
+typing ("Current level EXP:         {}%\n" .format(int((xp / lvlnext)*100)))
+typing ("EXP needed for next Level: " + str(lvlnext)+"\n")
 
