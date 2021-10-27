@@ -9,7 +9,7 @@ def typing(text):
 	for character in text:
 		sys.stdout.write(character)
 		sys.stdout.flush()
-		time.sleep(0.05)                        
+		time.sleep(0.05)
 
 char = {'lvl': 1,
         'xp' : 0,
@@ -35,10 +35,10 @@ def level(char, stats):
             print("HP                   ^ " + str(stats["HP"]))
             print("Attack               ^ " + str(stats["ATK"]))
             print("Defense              ^ " + str(stats["DEF"]))
-
-            
-            #print("You have reached level "+ str(char["lvl"]))
     
+
+            #print("You have reached level "+ str(char["lvl"]))
+
 
 
 char['xp'] +=10
