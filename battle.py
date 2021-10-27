@@ -3,8 +3,8 @@ import time
 import os
 import random
 
-def enemy_define():
-    print(imp)
+def enterbattlescenario():
+    
 
 
 enemylist = {
