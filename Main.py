@@ -4,6 +4,7 @@ import os
 import time #importing time
 import sys
 
+
 os.system('mode con: cols=190 lines=45')
 
 def typing(text):
@@ -19,7 +20,7 @@ def clrscrn():
 	else:
 		_=os.system('cls')
 		
-time.sleep(0)		
+time.sleep(3)		
 
 typing ("Welcome to our first little game\n\n\n\n\nCreated by;\n")
 
@@ -50,7 +51,6 @@ clrscrn()
 
 from Prologue import Prologue #imorting Prologue into this #bring Prologue to the game
 Prologue()
-
 
 
 
