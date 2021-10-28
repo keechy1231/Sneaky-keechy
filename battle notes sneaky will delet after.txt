@@ -1,0 +1,35 @@
+"""
+pick enemy
+
+    get enemy stats                                  done
+store to local variable                              done
+alter stats to be balanced against player level      done
+
+    get player stats                                 done char
+store to a local variable                            
+
+start fight
+
+    pick who goes first
+random intiger 1 is player 2 is enemy
+        there may be a more efficient way of doing this like def player turn and def enemy turn and have an if function for the base of 1 0r 2 ro be platyer start or not 
+        ie
+        if var == 1:
+            player turn()
+            while ehp >=0 and hp >=0:
+                enemy TURN()
+                PLAYER TURN()
+
+        make turn logger
+
+        player turn
+            choose action to make
+             if attack perform effect changes to enemy hp
+                player attack+random number -2/+2 *
+             if status changer perform changes to player stats
+        
+        
+        enemy turn
+             if attack perform effect changes to enemy hp
+             if status changer perform changes to player stats
+"""
