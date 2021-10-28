@@ -2,6 +2,7 @@ import sys
 import time
 import os
 import random
+import pip
 
 
 def enemy_pick(enemylist,char):
@@ -150,7 +151,11 @@ _/______/___/_(___ _____/________(__)_(___/_(___ _/___/_(___/_
     edef = epick["edef"]
     expgain = epick["expgain"]
 
-    ehp = ehp * char["LVL"]
+    ehp *= char["LVL"]
+    eatk *= char["LVL"]
+    edef *= char["LVL"]
+    expgain *= char["LVL"]
+
 
 
 #enemy dictionary for the function to be defined
@@ -178,17 +183,17 @@ print(expgain)
 
 #running the actual battles
 
-input()
+
 
 """
 pick enemy
 
     get enemy stats                                  done
 store to local variable                              done
-alter stats to be balanced against player level
+alter stats to be balanced against player level      done
 
-    get player stats
-store to a local variable
+    get player stats                                 done char
+store to a local variable                            
 
 start fight
 
