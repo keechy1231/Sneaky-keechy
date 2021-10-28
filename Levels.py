@@ -13,26 +13,30 @@ def typing(text):
 
 char = {'lvl': 1,
         'xp' : 0,
-        'lvlnext' : 10}
-
-stats = {'ATK': 10,
+        'lvlnext' : 10,
+        'ATK': 10,
          'DEF': 5,
          'HP' : 10}
 
-def level(char, stats):
-    nATK, nDEF, nHP = 0, 0, 0
-    while char['xp'] >= char['lvlnext']:
-        char['lvl'] += 1
-        char['xp'] = char['xp'] - char['lvlnext']
-        char['lvlnext'] = round(char['lvlnext'] * 1.2)
-        stats['ATK'] += 1
-        stats['DEF'] += 1
-        stats['HP'] +=1
-        if char["xp"] < char["lvlnext"]:
+def level(char,): #Level system for the hero
+       while char['xp'] >= char['lvlnext']: #if xp is greater to or equal to lvlnext xp then go through the below commands
+        char['lvl'] += 1 #level will go up by 1
+        char['xp'] = char['xp'] - char['lvlnext'] #take xp away from lvlnext to get new xp value
+        char['lvlnext'] = round(char['lvlnext'] * 1.2) #make lvlnext xp increase as the char levels up
+        char['ATK'] += 1 #increase base atk stat
+        char['DEF'] += 1 #increase base def stat
+        char['HP'] +=1 #increase base HP stat
+        if char["xp"] < char["lvlnext"]: #once the char can level no more output the below to show new stats. 
             print("Congratulations you have reached level " + str(char["lvl"]))
             print("Current XP             " + str(char["xp"]))
             print("XP to next level       " + str(char["lvlnext"]))
-            print("HP                   ^ " + str(stats["HP"]))
-            print("Attack               ^ " + str(stats["ATK"]))
-            print("Defense              ^ " + str(stats["DEF"]))
+            print("HP                   ^ " + str(char["HP"]))
+            print("Attack               ^ " + str(char["ATK"]))
+            print("Defense              ^ " + str(char["DEF"]))
+            
+    
+
+char['xp'] = char['xp'] + 40
+
+level(char)
 
