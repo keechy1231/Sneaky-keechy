@@ -57,7 +57,7 @@ def start():
 def title_screen_select():
     option = input()
     while 0 == 0 and option != 0:
-        if option == ("play"):
+        if option == ("play") or option ==  ("Play"):
                 start()
         elif option == ("Credits") or option ==  ("credits"):
                 credits()
@@ -84,7 +84,8 @@ def title_screen():
     
 def credits():
     clrscrn()
-    print ("keechy and sneaky are sad sad people and sat here and coded a game when they had no knowledge of python")
+    print ("Thank you for playing our game, this is our first attempt and we have no prior coding experience.\nA lot of help was gathered from github, youtube, x3 and stackoverflow.\n")
+    print ("Made by Tomas Keech and Jason Mutter\n\n\n\n\n")
     input ("Press Enter to return to Title Screen")
     clrscrn()
     title_screen()
