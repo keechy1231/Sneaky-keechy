@@ -127,12 +127,12 @@ _/______/___/_(___ _____/________(__)_(___/_(___ _/___/_(___/_
     elif epickname == "Ogre":
         print(Ogre_string)
         print("\n")
-        print("A mammoth of a humanoid stands stooped infront of you./ Their head scraping on th ceiling as it mulls around its lair./n It looks at you and after a few seconds of pondering begins at you!")
+        typing("A mammoth of a humanoid stands stooped infront of you./ Their head scraping on th ceiling as it mulls around its lair./n It looks at you and after a few seconds of pondering begins at you!")
         time.sleep(3)
     elif epickname == "Dwarf":
         print(Dwarf_string)
         print("\n")
-        print("A stout, short man stumbles ahead of you.\nA stains on his long beard and a thick oil like ")
+        typing("A stout, short man stumbles ahead of you.\nStains on his long beard and alcahol on his breath he stares at the doorway you stand in.\nHe raises his axe and charges!")
         time.sleep(3)
     elif epickname == "Tiny Hands":
         print(Bird_string)
@@ -142,7 +142,7 @@ _/______/___/_(___ _____/________(__)_(___/_(___ _/___/_(___/_
     elif epickname == "Giant":
         print(Giant_string)
         print("\n")
-        print("description")
+        typing("Crawling in this chanber lies a giant.\nIts form too large to even stand its bloodied knees scraped and calloused from the hard stone.\nHis reaching hand scratch towards your direction!")
         time.sleep(3)
     elif epickname == "Goblin":
         print(Goblin_string)
