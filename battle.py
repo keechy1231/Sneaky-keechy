@@ -198,13 +198,12 @@ def battle_sequence(enemylist,char,inventory):
     Battle_round = 0
 
     #pick weather the player or opponant will go first on 1 the player will go first
-    battle_start_modifier = random.randint(1,2)
-
+    battle_start_modifier = random.randint(0,1)
 
     #battle choice is the loop controaler. 1 is replay, 0 is next step
    
     Battle_choice = 1
-    if battle_start_modifier == 1:
+    if battle_start_modifier == 0:
         typing("\nYou got the jump on your opponent!\n\n")
         while Battle_choice != 0:                               #player round 1 attack
             roundehp = ehp
@@ -275,12 +274,12 @@ def battle_sequence(enemylist,char,inventory):
                     clrscrn()
                     Battle_choice = 1
         
-
+    else:
+        typing("\nYour Opponent got the jump on you!\n\n")
         while ehp > 0 and HP >0:                                #this contains the enemy decision tree needs to be randomised a bit too
             #enemy turn
             roundehp = ehp
             roundHP = HP
-            clrscrn()
             print("OPPONENTS TURN\n")
             time.sleep(1)
             print("Enemy HP:        " + str(ehp) + "/" + str(epick["ehp"]))
@@ -404,7 +403,7 @@ def battle_sequence(enemylist,char,inventory):
                         time.sleep(1)
                         clrscrn()
                         Battle_choice = 1
-
+            clrscrn()
 
         if HP > 0:
             clrscrn()
@@ -415,7 +414,7 @@ def battle_sequence(enemylist,char,inventory):
         else:
             clrscrn()
             print("You have died")
-input()
+
 
 #enemy dictionary for the function to be defined
 char = {'HP':10,'ATK':15,'DEF':5,'LVL':1,'XP':0,'LVLNEXT':10}
@@ -434,6 +433,10 @@ inventory = {'HPpotion':0, 'ATKpotion':10}
 
 battle_sequence(enemylist,char,inventory)
 
+
+
+varhelp = input()
 #running the actual battles
+
 
 
