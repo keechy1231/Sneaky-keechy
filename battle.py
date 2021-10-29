@@ -198,7 +198,7 @@ def battle_sequence(enemylist,char,inventory):
     Battle_round = 0
 
     #pick weather the player or opponant will go first on 1 the player will go first
-    battle_start_modifier = 1 #random.randint(1,2)
+    battle_start_modifier = random.randint(1,2)
 
 
     #battle choice is the loop controaler. 1 is replay, 0 is next step
@@ -335,6 +335,7 @@ def battle_sequence(enemylist,char,inventory):
                         typing("Your opponent broke through your armour")
                     print("You lost " + str(roundHP - HP)+" HP.")
                     eatk = epick["eatk"]
+            Battle_choice = 5
             while Battle_choice != 0: 
                 time.sleep(2)
                 clrscrn()
@@ -406,14 +407,15 @@ def battle_sequence(enemylist,char,inventory):
 
 
         if HP > 0:
+            clrscrn()
             print("You won the battle!")
             win = 1
-            XP += expgain
+            char['XP'] += expgain
             level(char)
         else:
             clrscrn()
             print("You have died")
-
+input()
 
 #enemy dictionary for the function to be defined
 char = {'HP':10,'ATK':15,'DEF':5,'LVL':1,'XP':0,'LVLNEXT':10}
@@ -435,39 +437,3 @@ battle_sequence(enemylist,char,inventory)
 #running the actual battles
 
 
-
-"""
-pick enemy
-
-    get enemy stats                                  done
-store to local variable                              done
-alter stats to be balanced against player level      done
-
-    get player stats                                 done char
-store to a local variable                            
-
-start fight
-
-    pick who goes first
-random intiger 1 is player 2 is enemy
-        there may be a more efficient way of doing this like def player turn and def enemy turn and have an if function for the base of 1 0r 2 ro be platyer start or not 
-        ie
-        if var == 1:
-            player turn()
-            while ehp >=0 and hp >=0:
-                enemy TURN()
-                PLAYER TURN()
-
-        make turn logger
-
-        player turn
-            choose action to make
-             if attack perform effect changes to enemy hp
-                player attack+random number -2/+2 *
-             if status changer perform changes to player stats
-        
-        
-        enemy turn
-             if attack perform effect changes to enemy hp
-             if status changer perform changes to player stats
-"""
