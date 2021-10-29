@@ -40,7 +40,7 @@ def room2():
             room2()
         elif mvnt == "W" or mvnt == "w":
             room3()
-        elif mvnt != ("E") or mvnt != ("e") or mvnt != ("W") or mvnt !=  ("w"):
+        elif mvnt != ("E") or mvnt != ("e") or mvnt != ("W") or mvnt !=  ("w"):1
             print("please enter a valid command")
             mvnt == 0
             mvnt = input()       
