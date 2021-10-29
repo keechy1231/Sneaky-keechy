@@ -32,4 +32,15 @@ random intiger 1 is player 2 is enemy
         enemy turn
              if attack perform effect changes to enemy hp
              if status changer perform changes to player stats
-"""
+
+
+
+             how enemys should think
+
+             
+             86% decision 14% random
+
+             4 options
+                attack 1
+                attack 2
+                defend 

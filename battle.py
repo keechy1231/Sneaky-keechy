@@ -152,7 +152,21 @@ _/______/___/_(___ _____/________(__)_(___/_(___ _/___/_(___/_
         print("\n\n\n")
         print("description")
 
-#setting enemy stats as variables for easy access
+def level(char,): #Level system for the hero
+       while char['xp'] >= char['lvlnext']: #if xp is greater to or equal to lvlnext xp then go through the below commands
+        char['lvl'] += 1 #level will go up by 1
+        char['xp'] = char['xp'] - char['lvlnext'] #take xp away from lvlnext to get new xp value
+        char['lvlnext'] = round(char['lvlnext'] * 1.2) #make lvlnext xp increase as the char levels up
+        char['ATK'] += 1 #increase base atk stat
+        char['DEF'] += 1 #increase base def stat
+        char['HP'] +=1 #increase base HP stat
+        if char["xp"] < char["lvlnext"]: #once the char can level no more output the below to show new stats. 
+            print("Congratulations you have reached level " + str(char["lvl"]))
+            print("Current XP             " + str(char["xp"]))
+            print("XP to next level       " + str(char["lvlnext"]))
+            print("HP                   ^ " + str(char["HP"]))
+            print("Attack               ^ " + str(char["ATK"]))
+            print("Defense              ^ " + str(char["DEF"]))
 
 
 def battle_sequence(enemylist,char,inventory):
@@ -223,14 +237,17 @@ def battle_sequence(enemylist,char,inventory):
                 if edef < 0 :
                     edef = 0
                     typing("You broke through your opponents armour")
-                print("The Enemy lost " + str(roundehp - ehp)+"HP.")
+                print("The Enemy lost " + str(roundehp - ehp)+" HP.")
+                ATK = char["ATK"]
                 Battle_choice = 0
+            #Defense calculater
             elif Battle_choice == "2":
                 DEF += round(0.5 * char["DEF"])
                 Battle_choice = 0
                 if DEF > char["DEF"]:
                     DEF = char["DEF"]
                     typing("Your defence went up to "+str(DEF))
+            #take an attack potion stackable
             elif Battle_choice == "3":
                 if inventory["ATKpotion"] > 0:
                     ATK += round(0.5*ATK)
@@ -242,6 +259,7 @@ def battle_sequence(enemylist,char,inventory):
                     time.sleep(1)
                     clrscrn()
                     Battle_choice = 1
+            #take a hp potion
             elif Battle_choice == "4":
                 if inventory["HPpotion"] > 0:
                     befor_potionHP = HP
@@ -256,30 +274,146 @@ def battle_sequence(enemylist,char,inventory):
                     time.sleep(1)
                     clrscrn()
                     Battle_choice = 1
+        
+
         while ehp > 0 and HP >0:                                #this contains the enemy decision tree needs to be randomised a bit too
-            print("Opponents turn")
+            #enemy turn
+            roundehp = ehp
             roundHP = HP
+            clrscrn()
+            print("OPPONENTS TURN\n")
             time.sleep(1)
-            if edef == 0:
-                typing(epickname + " is defending.")
-                edef += round(0.7 * epick["edef"])
-            elif edef == epick["edef"] and ehp == epick["ehp"]:
-                Typing(epickname + " attacks.")
-                eatk += random.randint(-2,2)
-                if DEF < eatk:
-                    DEF -= eatk
-                    HP += DEF
-                elif DEF > eatk:
-                    DEF -= eatk
-                else: 
-                    HP -= eatk
-                if DEF < 0 :
-                    DEF = 0
-                    typing("The enemy broke through your defence.")
-                print("You lost " + str(roundHP - HP)+" HP.")
-                Battle_choice = 0
-            #if def = 0 use defend
-            #if hp and def == master amounts use atk
+            print("Enemy HP:        " + str(ehp) + "/" + str(epick["ehp"]))
+            time.sleep(0.5)
+            print("Player HP:       " + str(HP) + "/" + str(char["HP"]))
+            time.sleep(0.5)
+            print("Player Armour:   " + str(DEF) + "/" + str(char["DEF"]))
+            time.sleep(0.5)
+            opponent_randomiser1 = random.randint(0,1)
+            if opponent_randomiser1 == 0:
+                opponent_randomiser2 = random.randint(0,1)
+                if opponent_randomiser2 == 0:
+                    #enemy atack function
+                    typing(epickname + "is attacking!")                 
+                    eatk += random.randint(-2,2)
+                    if DEF < eatk:
+                        DEF -= eatk
+                        HP += DEF
+                    elif DEF > eatk:
+                        DEF -= eatk
+                    else: 
+                        HP -= eatk
+                    if DEF < 0 :
+                        DEF = 0
+                        typing("Your opponent broke through your armour")
+                    print("You lost " + str(roundHP - HP)+" HP.")
+                    eatk = epick["eatk"]
+                else:
+                    #enemy defense function
+                    typing(epickname + "is defending!")
+                    edef += round(0.5 * epick["edef"])
+                    if edef > epick["edef"]:
+                        edef = epick["edef"]
+            else:
+                if edef == 0 and HP > eatk-5:
+                    typing(epickname + "is defending!")
+                    edef += round(0.5 * epick["edef"])
+                    if edef > epick["edef"]:
+                        edef = epick["edef"]
+                else:
+                    typing(epickname + "is attacking!")
+                    eatk += random.randint(-2,2)
+                    if DEF < eatk:
+                        DEF -= eatk
+                        HP += DEF
+                    elif DEF > eatk:
+                        DEF -= eatk
+                    else: 
+                        HP -= eatk
+                    if DEF < 0 :
+                        DEF = 0
+                        typing("Your opponent broke through your armour")
+                    print("You lost " + str(roundHP - HP)+" HP.")
+                    eatk = epick["eatk"]
+            while Battle_choice != 0: 
+                time.sleep(2)
+                clrscrn()
+                print("PLAYERS TURN\n")
+                time.sleep(1)
+                print("Enemy HP:        " + str(ehp) + "/" + str(epick["ehp"]))
+                time.sleep(0.5)
+                print("Player HP:       " + str(HP) + "/" + str(char["HP"]))
+                time.sleep(0.5)
+                print("Player Armour:   " + str(DEF) + "/" + str(char["DEF"]))
+                time.sleep(0.5)
+                print("\nChoose your action:")
+                time.sleep(0.5)
+                print("1 Attack         " + str(ATK))
+                print("2 Defend         " + str(DEF))
+                print("3 Attack Potion  " + str(inventory["ATKpotion"]))
+                print("4 Health Potion  " + str(inventory["HPpotion"]))
+                Battle_choice = input()
+                #attack action, take damage away from defense then add defense
+                if Battle_choice == "1":
+                    ATK += random.randint(-2,2)
+                    if edef < ATK:
+                        edef -= ATK
+                        ehp += edef
+                    elif edef > ATK:
+                        edef -= ATK
+                    else: 
+                        ehp -= ATK
+                    if edef < 0 :
+                        edef = 0
+                        typing("You broke through your opponents armour")
+                    print("The Enemy lost " + str(roundehp - ehp)+" HP.")
+                    ATK = char["ATK"]
+                    Battle_choice = 0
+                #Defense calculater
+                elif Battle_choice == "2":
+                    DEF += round(0.5 * char["DEF"])
+                    Battle_choice = 0
+                    if DEF > char["DEF"]:
+                        DEF = char["DEF"]
+                    typing("Your defence went up to "+str(DEF))
+                #take an attack potion stackable
+                elif Battle_choice == "3":
+                    if inventory["ATKpotion"] > 0:
+                        ATK += round(0.5*ATK)
+                        typing("You gain " + str(ATK - char["ATK"]) + " attack for the rest of this battle")
+                        Battle_choice = 0
+                    else:
+                        clrscrn()
+                        print("Out of attack potions")
+                        time.sleep(1)
+                        clrscrn()
+                        Battle_choice = 0
+                #take a hp potion
+                elif Battle_choice == "4":
+                    if inventory["HPpotion"] > 0:
+                        befor_potionHP = HP
+                        HP += round(0.25*Hp)
+                        if HP > char["HP"]:
+                            HP = char["HP"]
+                        typing("You gain " + str(HP - befor_potionHP) + " HP from the potion.")
+                        Battle_choice = 0
+                    else:
+                        clrscrn()
+                        print("Out of HP potions")
+                        time.sleep(1)
+                        clrscrn()
+                        Battle_choice = 1
+
+
+        if HP > 0:
+            print("You won the battle!")
+            win = 1
+            XP += expgain
+            level(char)
+        else:
+            clrscrn()
+            print("You have died")
+
 
 #enemy dictionary for the function to be defined
 char = {'HP':10,'ATK':15,'DEF':5,'LVL':1,'XP':0,'LVLNEXT':10}
