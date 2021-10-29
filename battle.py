@@ -122,7 +122,7 @@ _/______/___/_(___ _____/________(__)_(___/_(___ _/___/_(___/_
     if epickname == "Imp":
         print(Imp_string)
         print("\n")
-        typing("A small Imp crouches infront of you.\nIts sharp teeth gnarled and stained from devouring lost travelers.\nThe creature bounds back as it sees you and leaps at you!")
+        typing("A small winged deamon crouches infront of you.\nIts sharp teeth gnarled and stained from devouring meat ans bones.\nThe creature bounds back as it sees you then leaps!")
         time.sleep(3)
     elif epickname == "Ogre":
         print(Ogre_string)
@@ -137,7 +137,7 @@ _/______/___/_(___ _____/________(__)_(___/_(___ _/___/_(___/_
     elif epickname == "Tiny Hands":
         print(Bird_string)
         print("\n")
-        print("description")
+        print("An elongated frame hunches over a bench.\nHolding out a ladle with a mushroom in, their grin widens to a full toothed maw.\nA cleaver is lifted and he begins to advance!")
         time.sleep(3)
     elif epickname == "Giant":
         print(Giant_string)
@@ -147,17 +147,17 @@ _/______/___/_(___ _____/________(__)_(___/_(___ _/___/_(___/_
     elif epickname == "Goblin":
         print(Goblin_string)
         print("\n")
-        print("description")
+        print("Its a goblin.........really?\nSo there are giants and Deamons but we give him a gobline to fight?\nOkay then, heres a goblin.......")
         time.sleep(3)
     elif epickname == "Ghoul":
         print(Ghoul_string)
         print("\n")
-        print("description")
+        print("A gastly figure floats ahead.\nIts hollow form and featureless face stressed in a painfull simulation.\nlifting its hand the air converts to an icey texture!")
         time.sleep(3)
     elif epickname == "Psycho":
         print(Psycho_string)
         print("\n")
-        print("description")
+        print("A woman lounges in a chair in the leading chamber.\nClutching a hatchet coated in blood she screems at your sight.\nflighing the chair behind her she manicaly sprints for you!")
         time.sleep(3)
 
 def level(char,): 
