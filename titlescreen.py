@@ -81,6 +81,22 @@ def title_screen():
     print("                                                  ###############################################################################################")
     title_screen_select()
     
+def deathseq():
+    if (char['HP'] <= 0):
+        print ("You have been slain")
+        time.sleep(4)
+        endscr()
+
+
+def endscr():
+    clrscrn()
+    
+    
+    redo = input ("Thank you for playing our game, If you would like to play again Press 1, Press 2 to exit\n")
+    if redo == ("1"):
+        start()
+    elif redo == ("2"):
+        os.system(exit)
     
 def credits():
     clrscrn()
