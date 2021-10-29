@@ -71,7 +71,7 @@ if question2 == "Warrior" or question2 == "warrior" or question2 == "1":
     pcclass = "Warrior" #add to all player classes
     typing ("You are a warrior! \nYou can go all night with your health and stamina.\nI wouldnt try sneaking around though too much if i were you.\n")
 
-#thief stats
+#thief stats   he is black hashahahaha
 elif question2 == "Thief" or question2 == "thief" or question2 == "2":
     health = health * 2
     stamina = stamina * 3
