@@ -1,4 +1,5 @@
 make a randomiser for the rooms, counting the number of rooms been in, every 10th room give youb option to fight Boss
 
+code in companion
 
   
