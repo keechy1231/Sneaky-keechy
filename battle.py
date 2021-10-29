@@ -17,7 +17,7 @@ def typing(text):
         time.sleep(0.05)
 
 def enemy_pick(enemylist,char):
-    #picks a random enemy from the dictionary enemylist
+#picks a random enemy from the dictionary enemylist
     enemypick = (random.choice(list(enemylist.items())))
 
     global epickname
@@ -153,17 +153,17 @@ _/______/___/_(___ _____/________(__)_(___/_(___ _/___/_(___/_
         print("description")
 
 def level(char,): #Level system for the hero
-       while char['xp'] >= char['lvlnext']: #if xp is greater to or equal to lvlnext xp then go through the below commands
-        char['lvl'] += 1 #level will go up by 1
-        char['xp'] = char['xp'] - char['lvlnext'] #take xp away from lvlnext to get new xp value
-        char['lvlnext'] = round(char['lvlnext'] * 1.2) #make lvlnext xp increase as the char levels up
+       while char['XP'] >= char['LVLNEXT']: #if xp is greater to or equal to lvlnext xp then go through the below commands
+        char['LVL'] += 1 #level will go up by 1
+        char['XP'] = char['XP'] - char['LVLNEXT'] #take xp away from lvlnext to get new xp value
+        char['LVLNEXT'] = round(char['LVLNEXT'] * 1.2) #make lvlnext xp increase as the char levels up
         char['ATK'] += 1 #increase base atk stat
         char['DEF'] += 1 #increase base def stat
         char['HP'] +=1 #increase base HP stat
-        if char["xp"] < char["lvlnext"]: #once the char can level no more output the below to show new stats. 
-            print("Congratulations you have reached level " + str(char["lvl"]))
-            print("Current XP             " + str(char["xp"]))
-            print("XP to next level       " + str(char["lvlnext"]))
+        if char["XP"] < char["LVLNEXT"]: #once the char can level no more output the below to show new stats. 
+            print("Congratulations you have reached level " + str(char["LVL"]))
+            print("Current XP             " + str(char["XP"]))
+            print("XP to next level       " + str(char["LVLNEXT"]))
             print("HP                   ^ " + str(char["HP"]))
             print("Attack               ^ " + str(char["ATK"]))
             print("Defense              ^ " + str(char["DEF"]))
@@ -202,7 +202,7 @@ def battle_sequence(enemylist,char,inventory):
 
     #battle choice is the loop controaler. 1 is replay, 0 is next step
    
-    Battle_choice = 1
+    Battle_choice = 5
     if battle_start_modifier == 0:
         typing("\nYou got the jump on your opponent!\n\n")
         while Battle_choice != 0:                               #player round 1 attack
@@ -257,7 +257,7 @@ def battle_sequence(enemylist,char,inventory):
                     print("Out of attack potions")
                     time.sleep(1)
                     clrscrn()
-                    Battle_choice = 1
+                    Battle_choice = 5
             #take a hp potion
             elif Battle_choice == "4":
                 if inventory["HPpotion"] > 0:
@@ -272,9 +272,9 @@ def battle_sequence(enemylist,char,inventory):
                     print("Out of HP potions")
                     time.sleep(1)
                     clrscrn()
-                    Battle_choice = 1
+                    Battle_choice = 5
         
-    else:
+    if 0 == 0:
         typing("\nYour Opponent got the jump on you!\n\n")
         while ehp > 0 and HP >0:                                #this contains the enemy decision tree needs to be randomised a bit too
             #enemy turn
@@ -335,75 +335,75 @@ def battle_sequence(enemylist,char,inventory):
                     print("You lost " + str(roundHP - HP)+" HP.")
                     eatk = epick["eatk"]
             Battle_choice = 5
-            while Battle_choice != 0: 
-                time.sleep(2)
+            if HP > 0 :
+                while Battle_choice != 0: 
+                    time.sleep(2)
+                    clrscrn()
+                    print("PLAYERS TURN\n")
+                    time.sleep(1)
+                    print("Enemy HP:        " + str(ehp) + "/" + str(epick["ehp"]))
+                    time.sleep(0.5)
+                    print("Player HP:       " + str(HP) + "/" + str(char["HP"]))
+                    time.sleep(0.5)
+                    print("Player Armour:   " + str(DEF) + "/" + str(char["DEF"]))
+                    time.sleep(0.5)
+                    print("\nChoose your action:")
+                    time.sleep(0.5)
+                    print("1 Attack         " + str(ATK))
+                    print("2 Defend         " + str(DEF))
+                    print("3 Attack Potion  " + str(inventory["ATKpotion"]))
+                    print("4 Health Potion  " + str(inventory["HPpotion"]))
+                    Battle_choice = input()
+                    #attack action, take damage away from defense then add defense
+                    if Battle_choice == "1":
+                        ATK += random.randint(-2,2)
+                        if edef < ATK:
+                            edef -= ATK
+                            ehp += edef
+                        elif edef > ATK:
+                            edef -= ATK
+                        else: 
+                            ehp -= ATK
+                        if edef < 0 :
+                           edef = 0
+                           typing("You broke through your opponents armour")
+                        print("The Enemy lost " + str(roundehp - ehp)+" HP.")
+                        ATK = char["ATK"]
+                        Battle_choice = 0
+                    #Defense calculater
+                    elif Battle_choice == "2":
+                        DEF += round(0.5 * char["DEF"])
+                        Battle_choice = 0
+                        if DEF > char["DEF"]:
+                            DEF = char["DEF"]
+                        typing("Your defence went up to "+str(DEF))
+                    #take an attack potion stackable
+                    elif Battle_choice == "3":
+                        if inventory["ATKpotion"] > 0:
+                            ATK += round(0.5*ATK)
+                            typing("You gain " + str(ATK - char["ATK"]) + " attack for the rest of this battle")
+                            Battle_choice = 0
+                        else:
+                            clrscrn()
+                            print("Out of attack potions")
+                            time.sleep(1)
+                            clrscrn()
+                            Battle_choice = 5
+                    #take a hp potion
+                    elif Battle_choice == "4":
+                        if inventory["HPpotion"] > 0:
+                            befor_potionHP = HP
+                            HP += round(0.25*Hp)
+                            if HP > char["HP"]:
+                                HP = char["HP"]
+                            typing("You gain " + str(HP - befor_potionHP) + " HP from the potion.")
+                            Battle_choice = 0
+                        else:
+                            print("Out of HP potions")
+                            time.sleep(1)
+                            clrscrn()
+                            Battle_choice = 5
                 clrscrn()
-                print("PLAYERS TURN\n")
-                time.sleep(1)
-                print("Enemy HP:        " + str(ehp) + "/" + str(epick["ehp"]))
-                time.sleep(0.5)
-                print("Player HP:       " + str(HP) + "/" + str(char["HP"]))
-                time.sleep(0.5)
-                print("Player Armour:   " + str(DEF) + "/" + str(char["DEF"]))
-                time.sleep(0.5)
-                print("\nChoose your action:")
-                time.sleep(0.5)
-                print("1 Attack         " + str(ATK))
-                print("2 Defend         " + str(DEF))
-                print("3 Attack Potion  " + str(inventory["ATKpotion"]))
-                print("4 Health Potion  " + str(inventory["HPpotion"]))
-                Battle_choice = input()
-                #attack action, take damage away from defense then add defense
-                if Battle_choice == "1":
-                    ATK += random.randint(-2,2)
-                    if edef < ATK:
-                        edef -= ATK
-                        ehp += edef
-                    elif edef > ATK:
-                        edef -= ATK
-                    else: 
-                        ehp -= ATK
-                    if edef < 0 :
-                        edef = 0
-                        typing("You broke through your opponents armour")
-                    print("The Enemy lost " + str(roundehp - ehp)+" HP.")
-                    ATK = char["ATK"]
-                    Battle_choice = 0
-                #Defense calculater
-                elif Battle_choice == "2":
-                    DEF += round(0.5 * char["DEF"])
-                    Battle_choice = 0
-                    if DEF > char["DEF"]:
-                        DEF = char["DEF"]
-                    typing("Your defence went up to "+str(DEF))
-                #take an attack potion stackable
-                elif Battle_choice == "3":
-                    if inventory["ATKpotion"] > 0:
-                        ATK += round(0.5*ATK)
-                        typing("You gain " + str(ATK - char["ATK"]) + " attack for the rest of this battle")
-                        Battle_choice = 0
-                    else:
-                        clrscrn()
-                        print("Out of attack potions")
-                        time.sleep(1)
-                        clrscrn()
-                        Battle_choice = 0
-                #take a hp potion
-                elif Battle_choice == "4":
-                    if inventory["HPpotion"] > 0:
-                        befor_potionHP = HP
-                        HP += round(0.25*Hp)
-                        if HP > char["HP"]:
-                            HP = char["HP"]
-                        typing("You gain " + str(HP - befor_potionHP) + " HP from the potion.")
-                        Battle_choice = 0
-                    else:
-                        clrscrn()
-                        print("Out of HP potions")
-                        time.sleep(1)
-                        clrscrn()
-                        Battle_choice = 1
-            clrscrn()
 
         if HP > 0:
             clrscrn()
@@ -414,6 +414,7 @@ def battle_sequence(enemylist,char,inventory):
         else:
             clrscrn()
             print("You have died")
+    input()
 
 
 #enemy dictionary for the function to be defined
@@ -421,7 +422,7 @@ char = {'HP':10,'ATK':15,'DEF':5,'LVL':1,'XP':0,'LVLNEXT':10}
 
 enemylist = {
     "Imp"    : {'ehp':10, 'eatk':4, 'edef':2, 'expgain':13},
-    "Ogre"   : {'ehp':15, 'eatk':1, 'edef':12, 'expgain':13},
+    "Ogre"   : {'ehp':15, 'eatk':11, 'edef':12, 'expgain':13},
     "Dwarf"  : {'ehp':10, 'eatk':11, 'edef':12, 'expgain':13},
     "Tiny Hands" : {'ehp':10, 'eatk':11, 'edef':12, 'expgain':13},
     "Giant"  : {'ehp':10, 'eatk':11, 'edef':12, 'expgain':13},
@@ -429,7 +430,7 @@ enemylist = {
     "Ghoul"  : {'ehp':10, 'eatk':11, 'edef':12, 'expgain':13},
     "Psycho" : {'ehp':10, 'eatk':11, 'edef':12, 'expgain':13}}
 
-inventory = {'HPpotion':0, 'ATKpotion':10}
+inventory = {'HPpotion':10, 'ATKpotion':10}
 
 battle_sequence(enemylist,char,inventory)
 
