@@ -16,7 +16,7 @@ def clrscrn():
 		_=os.system("clear")
 	else:
 		_=os.system('cls')
-
+#write into a function???????
 #base stats prior to class selection
 health = 10
 stamina = 10
@@ -100,5 +100,8 @@ time.sleep(5)
 clrscrn()
 
 typing("So are you ready for an adventure then? \nOf course you are why else would you be here " + pcname + ".\n")
-input()
 
+time.sleep(4)
+from alltogethertest import alltogethertest
+
+room1()
