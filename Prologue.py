@@ -16,7 +16,7 @@ def clrscrn():
 		_=os.system("clear")
 	else:
 		_=os.system('cls')
-
+#write into a function???????
 #base stats prior to class selection
 health = 10
 stamina = 10
@@ -71,7 +71,7 @@ if question2 == "Warrior" or question2 == "warrior" or question2 == "1":
     pcclass = "Warrior" #add to all player classes
     typing ("You are a warrior! \nYou can go all night with your health and stamina.\nI wouldnt try sneaking around though too much if i were you.\n")
 
-#thief stats
+#thief stats   he is black hashahahaha
 elif question2 == "Thief" or question2 == "thief" or question2 == "2":
     health = health * 2
     stamina = stamina * 3
@@ -100,5 +100,8 @@ time.sleep(5)
 clrscrn()
 
 typing("So are you ready for an adventure then? \nOf course you are why else would you be here " + pcname + ".\n")
-input()
 
+time.sleep(4)
+from alltogethertest import alltogethertest
+
+room1()
