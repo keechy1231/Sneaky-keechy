@@ -53,16 +53,16 @@ def start():
     go = input("Please Press Enter\n")
     while 0 == 0 and go != 0:
         if go == ("") or go ==  (""):
-                start()
+                clrscrn()
+                from Prologue import Prologue #imorting Prologue into this #bring Prologue to the game
         elif go != (""):
                 typing ("Please press enter \n")
                 go = 0
-        go = input()
+                go = input()
         
     clrscrn()
     from Prologue import Prologue #imorting Prologue into this #bring Prologue to the game
-    
-    Prologue()
+   
 
 def title_screen_select():
     option = input()
@@ -77,8 +77,6 @@ def title_screen_select():
                 typing ("please input valid command\n")
                 option = 0
         option = input()
-    
-
     
 def title_screen():
     print (''' 
