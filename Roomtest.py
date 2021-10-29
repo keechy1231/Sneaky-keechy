@@ -46,4 +46,10 @@ def room2():
             mvnt = input()       
 
 
+
+
 room1()
+
+
+
+
