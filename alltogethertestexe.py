@@ -68,7 +68,7 @@ def title_screen_select():
         elif option != ("Play") or option != ("play") or option != ("Credits") or option !=  ("credits") or option != ("Exit") or option != ("exit"):
                 typing ("please input valid command\n")
                 option = 0
-        option = input()
+        option = input
     
     
     
