@@ -1,6 +1,8 @@
+#I have also made changes here - will need to ouput changes to rest of files, 
+#files changed; start(), endscrn() desthseq() credits() and battle_sequence() but the last can be changed in its main file as it was only one small change
+
 #here i am going to test bringing all our work togetehr
 #Start with Title Screen
-
 import cmd
 import sys
 import os
@@ -37,7 +39,7 @@ def clrscrn():
 def start():
     clrscrn()
     time.sleep(3)        
-    ftyping ("Welcome to our first little game\n\n\n\n\nCreated by;\n")
+    ftyping ("Welcome to The Starter.  A text based RPG made by two people who have no coding experience.\n\n\n\n\nCreated by;\n")
     time.sleep(1)
     print ( '''
      :::    ::: :::::::::: :::::::::: ::::::::  :::    ::: :::   :::           :::     ::::    ::: :::::::::         ::::::::  ::::    ::: ::::::::::     :::     :::    ::: :::   ::: 
@@ -50,13 +52,13 @@ def start():
     time.sleep(5)
     print ("\n\n\n\n\n\n\n\n\n\n\n\n")
    
-    go = input("Please Press Enter\n")
+    go = input("Please Press Enter to Begin\n")
     while 0 == 0 and go != 0:
         if go == ("") or go ==  (""):
                 clrscrn()
-                from Prologue import Prologue #imorting Prologue into this #bring Prologue to the game
+                prologue()
         elif go != (""):
-                typing ("Please press enter \n")
+                typing ("Please Press Enter to Begin\n")
                 go = 0
                 go = input()
        
@@ -139,15 +141,24 @@ def endscr():        #endscreen for when you die
     if redo == ("1"):
         title_screen()
     elif redo == ("2"):
-        os.system(exit)
+        credits()
+
     
 def credits():#credits for when you die and or chose them at the begining
     clrscrn()
-    print ("Thank you for playing our game, this is our first attempt and we have no prior coding experience.\nA lot of help was gathered from github, youtube, x3 and stackoverflow.\n")
-    print ("Made by Tomas Keech and Jason Mutter\n\n\n\n\n")
-    input ("Press Enter to return to Title Screen")
-    clrscrn()
-    title_screen()
+    print ("Thank you for playing our game, this is our first attempt and we have no prior coding experience.\n\n\nA lot of help was gathered from github, youtube, x3 and stackoverflow.\n\n\nBattle Mechanics made by Jason Mutter\nLeveling System made by Tomas Keech\nStory made by Jason Mutter\nRoom Design made by Tomas Keech\n\nWe both worked very hard on this little game and we hope you enjoy it")
+    back = input ("\n\n\nPress Enter to return to Title Screen, Or type exit to exit")
+    while 0 == 0 and back != 0:
+        if back == (""):
+            clrscrn()
+            title_screen()
+        elif back == ("exit") or back == ("Exit"):
+            os.system (exit)
+        else:
+            print("Press Enter to return to Title Screen")
+            back = 0
+            back = input()
+
 
 def level(char,): #Level system for the hero
        while char['XP'] >= char['LVLNEXT']: #if xp is greater to or equal to lvlnext xp then go through the below commands
@@ -172,9 +183,233 @@ def useHPpotion(HPpotion):
     print (nhp)
 
 
+def prologue():
+    #write into a function???????
+    #base stats prior to class selection
+    HP = 10
+    ATK = 10
+    DEF = 10
+    pcclass = "villager"
+
+    #get a PC name logged and recorded
+    typing ("Welcome adventurer.\n")
+    time.sleep(1)
+    typing ("Where should we begin?\n")
+    time.sleep(1)
+
+    #player title
+    typing ("First off, how about your title, do you prefer mr, miss or something else?\n")
+    pcpronoun = input()
+    time.sleep(1)
+
+    #player name
+    typing ("And now, how about a name, what should i call you?\n")
+    pcname = input()
+
+    time.sleep(1)
+    typing ("So you're "+pcpronoun+" "+ pcname+".\nIs that correct?\n")
+    time.sleep(1)
+    question1 = input()
+
+    #checking name is correct and fucking with the players name 
+    if question1 == "no" or question1 == "No":
+        typing ("Oh is that so, then what is your name then?")
+        pcname = input()
+        typing ("So its "+ pcname+". Your sure this time? Well i dont really care anymore.\nI'm going to call you "+pcpronoun+" Indecisive for wasting my time\n")
+        pcname = pcpronoun+" Indecisive"
+    elif question1 == "yes" or question1 == "Yes":
+        typing ("Okay, glad we got that right straight off the bat, you wouldnt believe how many people get their own name wrong.\nIts embarresing to be honest\n")
+    elif question1 != "yes" or question1 !="Yes" or question1 !="no" or question1 !="No" :
+        typing("What? thats not quite the answer to my question is it. I think im going to call you "+pcpronoun+" Ignoramus.\n")
+        pcname = pcpronoun+" Ignoramus"
+    time.sleep(1)
+    clrscrn()
+
+    #class selection
+    typing("next question for you then " + pcname + ", what is your class?\n1.Warrior\n2.Thief\n3.Soilder\n\n\n")
+    question2 = input()
+
+    #warrior stats
+    if question2 == "Warrior" or question2 == "warrior" or question2 == "1":
+        HP = HP * 5
+        DEF = DEF * 3
+        ATK = ATK * 3
+        pcclass = "Warrior" #add to all player classes
+        typing ("You are a warrior! \nYou can go all night with your health and stamina.\nI wouldnt try sneaking around though too much if i were you.\n")
+
+    #thief stats   he is black hashahahaha
+    elif question2 == "Thief" or question2 == "thief" or question2 == "2":
+        HP = HP * 2
+        DEF = DEF * 2
+        ATK = ATK * 4
+        pcclass = "Thief"
+        typing ("You are a thief!\nHiding in the shadows and striking unseen.\nUnfortuanately for you though, you are very squishy.\n")
+        #soilder stats
+    elif question2 == "Soilder" or question2 == "soilder" or question2 == "3":
+        HP = HP * 100
+        DEF = DEF * 100
+        ATK = ATK * 100
+        pcclass = "Soilder"
+        typing ("You are a soilder.\nTake hits and hit back harder, you can do that.\nJust like a dwarf your a natural sprinter, no marathons for you.\n")
+        
+    typing ("Well then my new " + pcclass + ", I hope you are happy with the results you have here as you cant change them.\n")
+    time.sleep(2)
+    print("Health:     " + str(HP))
+    print("Attack:    " + str(ATK))
+    print("Defence:    " + str(DEF))
+
+    time.sleep(5)
+    clrscrn()
+
+    typing("So are you ready for an adventure then? \nOf course you are why else would you be here " + pcname + ".\n")
+    room1()
 
 
+def room1():
+    clrscrn()
+    print ("you have entered a room, its cold, blah blah blah discriptive bits that i am no good at") #tell the player which room they are in    
+    battle_sequence(enemylist, char, inventory)
+    win = 1    
+    if win == 1: #make win function
+        print ("YAY you are so cool")
+    elif win != 1: 
+        deathseq()  #goes to the death sequence function
+        
+    mvnt = input("to your East there is a big black door, its open.  To your West there is a dark corridor, which way will you go? (Type E or W to proceed)")
+    while 0 == 0 and mvnt != 0:
+        if mvnt == "E" or mvnt == "e":
+            room3()
+        elif mvnt == "W" or mvnt == "w":
+            room2()
+        elif mvnt != ("E") or mvnt != ("e") or mvnt != ("W") or mvnt !=  ("w"):
+            print("please enter a valid command")
+            mvnt == 0
+            mvnt = input()
+    clrscrn()
+ 
+ 
+def room2():
+    clrscrn()
+    print ("you have entered a room, its cold, blah blah blah discriptive bits that i am no good at") #tell the player which room they are in    
+    battle_sequence(enemylist, char, inventory)
+    win = 1    
+    if win == 1: #make win function
+        print ("YAY you are so cool")
+    elif win != 1: 
+        deathseq()  #goes to the death sequence function
+        
+    mvnt = input("(Type S or E to proceed)")
+    while 0 == 0 and mvnt != 0:
+        if mvnt == "S" or mvnt == "s":
+            room4()
+        elif mvnt == "E" or mvnt == "e":
+            room1()
+        elif mvnt != ("E") or mvnt != ("e") or mvnt != ("S") or mvnt !=  ("s"):
+            print("please enter a valid command")
+            mvnt == 0
+            mvnt = input()
+    
 
+
+def room3():
+    clrscrn()
+    print ("you have entered a room, its cold, blah blah blah discriptive bits that i am no good at") #tell the player which room they are in    
+    battle_sequence(enemylist, char, inventory)
+    win = 1    
+    if win == 1: #make win function
+        print ("YAY you are so cool")
+    elif win != 1: 
+        deathseq()  #goes to the death sequence function
+        
+    mvnt = input("(Type S or W to proceed)")
+    while 0 == 0 and mvnt != 0:
+        if mvnt == "S" or mvnt == "s":
+            room5()
+        elif mvnt == "W" or mvnt == "w":
+            room1()
+        elif mvnt != ("W") or mvnt != ("w") or mvnt != ("S") or mvnt !=  ("s"):
+            print("please enter a valid command")
+            mvnt == 0
+            mvnt = input()
+    
+
+def room4():
+    clrscrn()
+    print ("you have entered a room, its cold, blah blah blah discriptive bits that i am no good at") #tell the player which room they are in    
+    battle_sequence(enemylist, char, inventory)
+    win = 1    
+    if win == 1: #make win function
+        print ("YAY you are so cool")
+    elif win != 1: 
+        deathseq()  #goes to the death sequence function
+        
+    mvnt = input("(Type N or E to proceed)")
+    while 0 == 0 and mvnt != 0:
+        if mvnt == "N" or mvnt == "n":
+            room2()
+        elif mvnt == "E" or mvnt == "e":
+            room6()
+        elif mvnt != ("E") or mvnt != ("e") or mvnt != ("N") or mvnt !=  ("n"):
+            print("please enter a valid command")
+            mvnt == 0
+            mvnt = input()
+
+def room5():
+    clrscrn()
+    print ("you have entered a room, its cold, blah blah blah discriptive bits that i am no good at") #tell the player which room they are in    
+    battle_sequence(enemylist, char, inventory)
+    win = 1    
+    if win == 1: #make win function
+        print ("YAY you are so cool")
+    elif win != 1: 
+        deathseq()  #goes to the death sequence function
+        
+    mvnt = input("(Type N or W to proceed)")
+    while 0 == 0 and mvnt != 0:
+        if mvnt == "N" or mvnt == "n":
+            room3()
+        elif mvnt == "W" or mvnt == "w":
+            room6()
+        elif mvnt != ("W") or mvnt != ("w") or mvnt != ("N") or mvnt !=  ("n"):
+            print("please enter a valid command")
+            mvnt == 0
+            mvnt = input()
+    clrscrn()
+
+
+def room6():
+    clrscrn()
+    print ("you have entered a room, its cold, blah blah blah discriptive bits that i am no good at") #tell the player which room they are in    
+    battle_sequence()
+    win = 1    
+    if win == 1: #make win function
+        print ("YAY you are so cool")
+    elif win != 1: 
+        deathseq(enemylist, char, inventory)  #goes to the death sequence function
+        
+    mvnt = input("(THE BOSS ROOM IS TO THE NORTH Type W or E OR N to proceed)")
+    while 0 == 0 and mvnt != 0:
+        if mvnt == "N" or mvnt == "n":
+            bossroom()
+        elif mvnt == "W" or mvnt == "w":
+            room4()
+        elif mvnt == "E" or mvnt == "e":
+            room5()
+        elif mvnt != ("W") or mvnt != ("w") or mvnt != ("N") or mvnt != ("n") or mvnt != ("E") or mvnt !=  ("e"):
+            print("please enter a valid command")
+            mvnt == 0
+            mvnt = input()
+    
+
+def bossroom():
+    clrscrn()
+    print ("THIS IS THE BOSS BITCH") #tell the player which room they are in    
+    battle_sequence()
+    win = 1    
+    if win == 1: #make win function
+        print ("YAY you are so cool")
+    elif win != 1: 
+        deathseq()  #goes to the death sequence function
 
 def enemy_pick(enemylist,char):
 #picks a random enemy from the dictionary enemylist
@@ -592,8 +827,10 @@ def battle_sequence(enemylist,char,inventory):
             char['XP'] += expgain
             level(char)
         else:
+            typing ("You have been slain")
+            time.sleep(2)
             clrscrn()
-            print("You have died")
+            endscr()
 
 
 
