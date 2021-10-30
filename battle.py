@@ -4,6 +4,7 @@ import os
 import random
 import pip
 
+
 def clrscrn():
     if os.name == 'posix':
         _=os.system("clear")
