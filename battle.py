@@ -137,7 +137,7 @@ def enemy_pick(enemylist,char):
     elif epickname == "Tiny Hands":
         print(Bird_string)
         print("\n")
-        print("An elongated frame hunches over a bench.\nHolding out a ladle with a mushroom in, their grin widens to a full toothed maw.\nA cleaver is lifted and he begins to advance!")
+        typing("An elongated frame hunches over a bench.\nHolding out a ladle with a mushroom in, their grin widens to a full toothed maw.\nA cleaver is lifted and he begins to advance!")
         time.sleep(3)
     elif epickname == "Giant":
         print(Giant_string)
@@ -147,17 +147,17 @@ def enemy_pick(enemylist,char):
     elif epickname == "Goblin":
         print(Goblin_string)
         print("\n")
-        print("Its a goblin.........really?\nSo there are giants and Deamons but we give him a gobline to fight?\nOkay then, heres a goblin.......")
+        typing("Its a goblin.........really?\nSo there are giants and Deamons but we give him a gobline to fight?\nOkay then, heres a goblin.......")
         time.sleep(3)
     elif epickname == "Ghoul":
         print(Ghoul_string)
         print("\n")
-        print("A gastly figure floats ahead.\nIts hollow form and featureless face stressed in a painfull simulation.\nlifting its hand the air converts to an icey texture!")
+        typing("A gastly figure floats ahead.\nIts hollow form and featureless face stressed in a painfull simulation.\nlifting its hand the air converts to an icey texture!")
         time.sleep(3)
     elif epickname == "Psycho":
         print(Psycho_string)
         print("\n")
-        print("A woman lounges in a chair in the leading chamber.\nClutching a hatchet coated in blood she screems at your sight.\nflighing the chair behind her she manicaly sprints for you!")
+        typing("A woman lounges in a chair in the leading chamber.\nClutching a hatchet coated in blood she screems at your sight.\nflighing the chair behind her she manicaly sprints for you!")
         time.sleep(3)
 
 def level(char,): 
@@ -178,7 +178,7 @@ def level(char,):
 #increase base HP stat
         if char["XP"] < char["LVLNEXT"]: 
 #once the char can level no more output the below to show new stats. 
-            typing("Congratulations you have reached level " + str(char["LVL"]))
+            typing("Congratulations you have reached level " + str(char["LVL"]) + "\n")
             time.sleep(1)
             print("\nCurrent XP             " + str(char["XP"]))
             print("XP to next level       " + str(char["LVLNEXT"]))
@@ -249,7 +249,7 @@ def battle_sequence(enemylist,char,inventory):
                     ehp += edef
                 elif edef > ATK:
                     edef -= ATK
-                    typing("You broke through your opponents armour\n")
+                    typing("Your attack was blocked.\n")
                 else: 
                     ehp -= ATK
                 if edef < 0 :
@@ -329,6 +329,7 @@ def battle_sequence(enemylist,char,inventory):
                         HP += DEF
                     elif DEF > eatk:
                         DEF -= eatk
+                        typing("You blocked their attack.\n")
                     else: 
                         HP -= eatk
                     if DEF < 0 :
@@ -358,6 +359,7 @@ def battle_sequence(enemylist,char,inventory):
                         HP += DEF
                     elif DEF > eatk:
                         DEF -= eatk
+                        typing("You blocked their attack.\n")
                     else: 
                         HP -= eatk
                     if DEF < 0 :
@@ -395,6 +397,7 @@ def battle_sequence(enemylist,char,inventory):
                             ehp += edef
                         elif edef > ATK:
                             edef -= ATK
+                            typing("Your attack was blocked.\n")
                         else: 
                             ehp -= ATK
                         if edef < 0 :
@@ -449,7 +452,8 @@ def battle_sequence(enemylist,char,inventory):
 
         if HP > 0:
             clrscrn()
-            typing("You won the battle!")
+            typing("You have provailed in this battle!\n")
+            time.sleep(1)
             win = 1
             char['XP'] += expgain
             level(char)
