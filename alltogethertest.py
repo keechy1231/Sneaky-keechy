@@ -59,9 +59,7 @@ def start():
                 typing ("Please press enter \n")
                 go = 0
                 go = input()
-        
-    clrscrn()
-    from Prologue import Prologue #imorting Prologue into this #bring Prologue to the game
+       
    
 
 def title_screen_select():
