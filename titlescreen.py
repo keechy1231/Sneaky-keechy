@@ -35,7 +35,7 @@ def clrscrn():
 def start():
     clrscrn()
     time.sleep(3)        
-    ftyping ("Welcome to our first little game\n\n\n\n\nCreated by;\n")
+    ftyping ("Welcome to The Starter.  A text based RPG made by two people who have no coding experience.\n\n\n\n\nCreated by;\n")
     time.sleep(1)
     print ( '''
      :::    ::: :::::::::: :::::::::: ::::::::  :::    ::: :::   :::           :::     ::::    ::: :::::::::         ::::::::  ::::    ::: ::::::::::     :::     :::    ::: :::   ::: 
@@ -46,13 +46,17 @@ def start():
      #+#   #+#  #+#        #+#       #+#    #+# #+#    #+#    #+#          #+#     #+# #+#   #+#+# #+#    #+#       #+#    #+# #+#   #+#+# #+#        #+#     #+# #+#   #+#     #+#    
      ###    ### ########## ########## ########  ###    ###    ###          ###     ### ###    #### #########         ########  ###    #### ########## ###     ### ###    ###    ###    ''')            
     time.sleep(5)
-    clrscrn()
-    styping ("In this game you will encounter random events against random enemies, everytime you play this game it will play differently.\n\n\n\n\n")
-    input ("Press Enter to Begin")
-    clrscrn()
-    from Prologue import Prologue #imorting Prologue into this #bring Prologue to the game
-    
-    Prologue()
+    print ("\n\n\n\n\n\n\n\n\n\n\n\n")
+   
+    go = input("Please Press Enter to Begin\n")
+    while 0 == 0 and go != 0:
+        if go == ("") or go ==  (""):
+                clrscrn()
+                prologue()
+        elif go != (""):
+                typing ("Please Press Enter to Begin\n")
+                go = 0
+                go = input()
 
 def title_screen_select():
     option = input()
@@ -81,29 +85,37 @@ def title_screen():
     print("                                                  ###############################################################################################")
     title_screen_select()
     
-def deathseq():
+ def deathseq():
     if (char['HP'] <= 0):
         print ("You have been slain")
         time.sleep(4)
         endscr()
 
 
-def endscr():
+def endscr():        #endscreen for when you die
     clrscrn()
     
     
     redo = input ("Thank you for playing our game, If you would like to play again Press 1, Press 2 to exit\n")
     if redo == ("1"):
-        start()
+        title_screen()
     elif redo == ("2"):
-        os.system(exit)
+        credits()
     
-def credits():
+def credits():#credits for when you die and or chose them at the begining
     clrscrn()
-    print ("Thank you for playing our game, this is our first attempt and we have no prior coding experience.\nA lot of help was gathered from github, youtube, x3 and stackoverflow.\n")
-    print ("Made by Tomas Keech and Jason Mutter\n\n\n\n\n")
-    input ("Press Enter to return to Title Screen")
-    clrscrn()
-    title_screen()
+    print ("Thank you for playing our game, this is our first attempt and we have no prior coding experience.\n\n\nA lot of help was gathered from github, youtube, x3 and stackoverflow.\n\n\nBattle Mechanics made by Jason Mutter\nLeveling System made by Tomas Keech\nStory made by Jason Mutter\nRoom Design made by Tomas Keech\n\nWe both worked very hard on this little game and we hope you enjoy it")
+    back = input ("\n\n\nPress Enter to return to Title Screen, Or type exit to exit")
+    while 0 == 0 and back != 0:
+        if back == (""):
+            clrscrn()
+            title_screen()
+        elif back == ("exit") or back == ("Exit"):
+            os.system (exit)
+        else:
+            print("Press Enter to return to Title Screen")
+            back = 0
+            back = input()
+
 
 title_screen()

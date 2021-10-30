@@ -1,5 +1,5 @@
 #I have also made changes here - will need to ouput changes to rest of files, 
-#files changed; start(), endscrn() desthseq() credits() and battle_sequence() but the last can be changed in its main file as it was only one small change
+#files changed; credits() and battle_sequence() but the last can be changed in its main file as it was only one small change
 
 #here i am going to test bringing all our work togetehr
 #Start with Title Screen
@@ -896,7 +896,6 @@ inventory = {'ATKpotion': 10,
         'HPpotion': 10}
 
 
-#prologue will go here
 
 
 
