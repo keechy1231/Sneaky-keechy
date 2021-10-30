@@ -17,14 +17,15 @@ def clrscrn():
 	else:
 		_=os.system('cls')
 
+char = {'LVL': 1,
+        'XP' : 0,
+        'LVLNEXT' : 10,
+        'ATK': 10,
+         'DEF': 10,
+         'HP' : 10}
 
 def prologue():
-    #write into a function???????
-    #base stats prior to class selection
-    HP = 10
-    ATK = 10
-    DEF = 10
-    pcclass = "villager"
+    #base stats prior to class selection come from char(stats)
 
     #get a PC name logged and recorded
     typing ("Welcome adventurer.\n")
@@ -66,32 +67,32 @@ def prologue():
 
     #warrior stats
     if question2 == "Warrior" or question2 == "warrior" or question2 == "1":
-        HP = HP * 5
-        DEF = DEF * 3
-        ATK = ATK * 3
-        pcclass = "Warrior" #add to all player classes
+        char['HP'] = char['HP'] * 5
+        char['DEF'] = char['DEF'] * 3
+        char['ATK'] = char['ATK'] * 3
+        pcclass = "Warrior" 
         typing ("You are a warrior! \nYou can go all night with your health and stamina.\nI wouldnt try sneaking around though too much if i were you.\n")
 
     #thief stats   he is black hashahahaha
     elif question2 == "Thief" or question2 == "thief" or question2 == "2":
-        HP = HP * 2
-        DEF = DEF * 2
-        ATK = ATK * 4
+        char['HP'] = char['HP'] * 2
+        char['DEF'] = char['DEF'] * 2
+        char['ATK'] = char['ATK'] * 4
         pcclass = "Thief"
         typing ("You are a thief!\nHiding in the shadows and striking unseen.\nUnfortuanately for you though, you are very squishy.\n")
         #soilder stats
     elif question2 == "Soilder" or question2 == "soilder" or question2 == "3":
-        HP = HP * 100
-        DEF = DEF * 100
-        ATK = ATK * 100
+        char['HP'] = char['HP'] * 5
+        char['DEF'] = char['DEF'] * 5
+        char['ATK'] = char['ATK'] * 5
         pcclass = "Soilder"
         typing ("You are a soilder.\nTake hits and hit back harder, you can do that.\nJust like a dwarf your a natural sprinter, no marathons for you.\n")
         
     typing ("Well then my new " + pcclass + ", I hope you are happy with the results you have here as you cant change them.\n")
     time.sleep(2)
-    print("Health:     " + str(HP))
-    print("Attack:    " + str(ATK))
-    print("Defence:    " + str(DEF))
+    print("Health:     " + str(char['HP']))
+    print("Attack:    " + str(char['ATK']))
+    print("Defence:    " + str(char['DEF']))
 
     time.sleep(5)
     clrscrn()
