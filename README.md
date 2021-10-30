@@ -1,3 +1,4 @@
-# Sneaky-keechy
-text adventure game with keechy
-#for ref - https://thecodingpie.com/post/make-your-own-text-based-adventure-game-in-python3
+Two guys who know nothing about coding attempt to make an RPG text based game. 
+
+
+If you download this game please play using TheStarter.exe launcher.

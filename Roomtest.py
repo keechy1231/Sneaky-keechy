@@ -12,6 +12,7 @@ def clrscrn():
 
 
 def room1():
+    clrscrn()
     print ("you have entered a room, its cold, blah blah blah discriptive bits that i am no good at") #tell the player which room they are in    
     #battle_sequence()
     win = 1    
@@ -34,6 +35,7 @@ def room1():
  
  
 def room2():
+    clrscrn()
     print ("you have entered a room, its cold, blah blah blah discriptive bits that i am no good at") #tell the player which room they are in    
     #battle_sequence()
     win = 1    
@@ -52,10 +54,11 @@ def room2():
             print("please enter a valid command")
             mvnt == 0
             mvnt = input()
-    clrscrn()
+    
 
 
 def room3():
+    clrscrn()
     print ("you have entered a room, its cold, blah blah blah discriptive bits that i am no good at") #tell the player which room they are in    
     #battle_sequence()
     win = 1    
@@ -74,9 +77,10 @@ def room3():
             print("please enter a valid command")
             mvnt == 0
             mvnt = input()
-    clrscrn()
+    
 
 def room4():
+    clrscrn()
     print ("you have entered a room, its cold, blah blah blah discriptive bits that i am no good at") #tell the player which room they are in    
     #battle_sequence()
     win = 1    
@@ -95,9 +99,9 @@ def room4():
             print("please enter a valid command")
             mvnt == 0
             mvnt = input()
-    clrscrn()
 
 def room5():
+    clrscrn()
     print ("you have entered a room, its cold, blah blah blah discriptive bits that i am no good at") #tell the player which room they are in    
     #battle_sequence()
     win = 1    
@@ -120,6 +124,7 @@ def room5():
 
 
 def room6():
+    clrscrn()
     print ("you have entered a room, its cold, blah blah blah discriptive bits that i am no good at") #tell the player which room they are in    
     #battle_sequence()
     win = 1    
@@ -128,7 +133,7 @@ def room6():
     elif win != 1: 
         deathseq()  #goes to the death sequence function
         
-    mvnt = input("(Type W or E OR N to proceed)")
+    mvnt = input("(THE BOSS ROOM IS TO THE NORTH Type W or E OR N to proceed)")
     while 0 == 0 and mvnt != 0:
         if mvnt == "N" or mvnt == "n":
             bossroom()
@@ -140,9 +145,10 @@ def room6():
             print("please enter a valid command")
             mvnt == 0
             mvnt = input()
-    clrscrn()
+    
 
 def bossroom():
+    clrscrn()
     print ("THIS IS THE BOSS BITCH") #tell the player which room they are in    
     #battle_sequence()
     win = 1    
@@ -151,7 +157,4 @@ def bossroom():
     elif win != 1: 
         deathseq()  #goes to the death sequence function
         
-   
-          
-
 room1()
