@@ -1,5 +1,5 @@
 #I have also made changes here - will need to ouput changes to rest of files, 
-#files changed; credits() and battle_sequence() but the last can be changed in its main file as it was only one small change
+#files changed;battle_sequence() but the last can be changed in its main file as it was only one small change
 
 #here i am going to test bringing all our work togetehr
 #Start with Title Screen
@@ -231,7 +231,7 @@ def prologue():
         pcclass = "Warrior" 
         typing ("You are a warrior! \nYou can go all night with your health and stamina.\nI wouldnt try sneaking around though too much if i were you.\n")
 
-    #thief stats   he is black hashahahaha
+    #thief stats  
     elif question2 == "Thief" or question2 == "thief" or question2 == "2":
         char['HP'] = char['HP'] * 2
         char['DEF'] = char['DEF'] * 2
@@ -825,8 +825,6 @@ def battle_sequence(enemylist,char,inventory):
             time.sleep(2)
             clrscrn()
             endscr()
-
-
 
 
 
