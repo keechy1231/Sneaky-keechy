@@ -190,7 +190,7 @@ def level(char,):
             print("Defense              ^ " + str(char["DEF"]))
 
 #charecter
-char = {'HP':20,'ATK':20,'DEF':50,'LVL':1,'XP':0,'LVLNEXT':10}
+char = {'HP':2,'ATK':20,'DEF':0,'LVL':1,'XP':0,'LVLNEXT':10}
 
 #enemy dictionary for the function to be defined
 enemylist = {
@@ -205,6 +205,16 @@ enemylist = {
 
 #inventory dictionary
 inventory = {'HPpotion':10, 'ATKpotion':10}
+
+def endscr():        #endscreen for when you die
+    clrscrn()
+    
+    
+    redo = input ("Thank you for playing our game, If you would like to play again Press 1, Press 2 to exit\n")
+    if redo == ("1"):
+        title_screen()
+    elif redo == ("2"):
+        os.system(exit)
 
 def enemy_pick(enemylist,char):
 #picks a random enemy from the dictionary enemylist
@@ -621,14 +631,12 @@ def battle_sequence(enemylist,char,inventory):
             char['XP'] += expgain
             level(char)
         else:
+            typing ("You have been slain")
+            time.sleep(2)
             clrscrn()
-            deathseq()
+            endscr()
 
-def deathseq():
-    if (char['HP'] <= 0):
-        print ("You have been slain")
-        time.sleep(4)
-        endscr()
+
 
 def room1():
     clrscrn()
