@@ -46,7 +46,7 @@ def level(char):
             print("Attack               ^ " + str(char["ATK"]))
             time.sleep(0.1)
             print("Defense              ^ " + str(char["DEF"]))
-
+            
 def endscr():        #endscreen for when you die
     clrscrn()
     
