@@ -563,8 +563,20 @@ def room2():
     '''
     print(room_string)
 
+    typing("\nDarkness prevails over light here in the cavern.")
+    time.sleep(0.3)
+    typing("\nStalagmites hang low offering sharp obstacles to traverse in this desolate cave with their counterpart stalactites jutting from the land.")
+    time.sleep(0.3)
+    typing("\nVoids and crevices dot the floor in uneven patterns giving access to insects, arachnids and small rodents between the caves chambers")
+    time.sleep(0.3)
+    typing("\nTravel through this area leads you through a crawlspace to a small cavern where small tunnels lead out in other directions.")
+    time.sleep(0.3)
+    typing("\nA large hole in the floor gazes down into the darkness bellow.")   
+    time.sleep(2)
+    typing("\nNoise emanates from bellow before something emerges.")
     clrscrn()
-    print ("you have entered a room, its cold, blah blah blah discriptive bits that i am no good at") #tell the player which room they are in    
+    time.sleep(1)
+
     battle_sequence(enemylist, char, inventory)
     print ("congratulations you have defeted the " +str(epick) +" in its lair")
     
