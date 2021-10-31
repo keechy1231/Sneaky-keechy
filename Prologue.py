@@ -24,7 +24,7 @@ char = {'LVL': 1,
          'DEF': 10,
          'HP' : 10}
 
-def prologue():
+def prologue(char):
     #base stats prior to class selection come from char(stats)
 
     #get a PC name logged and recorded
@@ -73,18 +73,18 @@ def prologue():
         pcclass = "Warrior" 
         typing ("You are a warrior! \nYou can go all night with your health and stamina.\nI wouldnt try sneaking around though too much if i were you.\n")
 
-    #thief stats   he is black hashahahaha
+    #thief stats
     elif question2 == "Thief" or question2 == "thief" or question2 == "2":
-        char['HP'] = char['HP'] * 2
-        char['DEF'] = char['DEF'] * 2
-        char['ATK'] = char['ATK'] * 4
+        char['HP'] = char['HP'] * 3
+        char['DEF'] = char['DEF'] * 3
+        char['ATK'] = char['ATK'] * 5
         pcclass = "Thief"
         typing ("You are a thief!\nHiding in the shadows and striking unseen.\nUnfortuanately for you though, you are very squishy.\n")
         #soilder stats
     elif question2 == "Soilder" or question2 == "soilder" or question2 == "3":
-        char['HP'] = char['HP'] * 5
+        char['HP'] = char['HP'] * 3
         char['DEF'] = char['DEF'] * 5
-        char['ATK'] = char['ATK'] * 5
+        char['ATK'] = char['ATK'] * 3
         pcclass = "Soilder"
         typing ("You are a soilder.\nTake hits and hit back harder, you can do that.\nJust like a dwarf your a natural sprinter, no marathons for you.\n")
         
@@ -101,4 +101,4 @@ def prologue():
     room1()
 
 
-prologue()
+prologue(char)
