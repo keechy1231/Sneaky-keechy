@@ -342,7 +342,7 @@ def battle_sequence(enemylist,char,inventory):
             print(estring)
             print("Enemy HP:        " + str(ehp) + "/" + str(emhp))
             print("\nPlayer HP:       " + str(HP) + "/" + str(char["HP"]))
-            print("Player Armor:   " + str(DEF) + "/" + str(char["DEF"])+"\n")
+            print("Player Armor:   " + str(DEF) + "/" + str(char["DEF"])+"\n\n")
             print("OPPONENTS TURN\n")
             time.sleep(1)
             opponent_randomiser1 = random.randint(0,1)
