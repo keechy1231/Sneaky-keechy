@@ -26,6 +26,10 @@ char = {'LVL': 1,
 
 def prologue(char):
     #base stats prior to class selection come from char(stats)
+    
+    lines = open('Animals1.txt').read().splitlines()
+    dewi = random.choice(lines)
+    print(companion)
 
     #get a PC name logged and recorded
     typing ("Welcome adventurer.\n")

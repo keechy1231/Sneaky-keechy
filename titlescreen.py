@@ -76,7 +76,7 @@ def title_screen():
     title_screen_select()
     
 def deathseq():
-     if (char['HP'] <= 0):
+     #if (char['HP'] <= 0):
         print ("You have been slain")
         time.sleep(4)
         endscr()
