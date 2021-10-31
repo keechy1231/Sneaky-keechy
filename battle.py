@@ -15,7 +15,7 @@ def typing(text):
     for character in text:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.01)
+        time.sleep(0.05)
 
 def enemy_pick(enemylist,char):
 #picks a random enemy from the dictionary enemylist
