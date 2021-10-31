@@ -1,5 +1,6 @@
 #I have also made changes here - will need to ouput changes to rest of files, 
-#files changed;battle_sequence() but the last can be changed in its main file as it was only one small change
+#files changed;
+
 
 #here i am going to test bringing all our work togetehr
 #Start with Title Screen
@@ -130,7 +131,6 @@ def endscr():        #endscreen for when you die
         title_screen()
     elif redo == ("2"):
         credits()
-
     
 def credits():#credits for when you die and or chose them at the begining
     clrscrn()
@@ -146,7 +146,6 @@ def credits():#credits for when you die and or chose them at the begining
             print("Press Enter to return to Title Screen")
             back = 0
             back = input()
-
 
 def level(char,): #Level system for the hero
        while char['XP'] >= char['LVLNEXT']: #if xp is greater to or equal to lvlnext xp then go through the below commands
@@ -246,7 +245,6 @@ def prologue():
     typing("So are you ready for an adventure then? \nOf course you are why else would you be here " + pcname + ".\n")
     room1()
 
-
 def room1():
     clrscrn()
     print ("you have entered a room, its cold, blah blah blah discriptive bits that i am no good at") #tell the player which room they are in    
@@ -268,8 +266,7 @@ def room1():
             mvnt == 0
             mvnt = input()
     clrscrn()
- 
- 
+  
 def room2():
     clrscrn()
     print ("you have entered a room, its cold, blah blah blah discriptive bits that i am no good at") #tell the player which room they are in    
@@ -291,8 +288,6 @@ def room2():
             mvnt == 0
             mvnt = input()
     
-
-
 def room3():
     clrscrn()
     print ("you have entered a room, its cold, blah blah blah discriptive bits that i am no good at") #tell the player which room they are in    
@@ -314,7 +309,6 @@ def room3():
             mvnt == 0
             mvnt = input()
     
-
 def room4():
     clrscrn()
     print ("you have entered a room, its cold, blah blah blah discriptive bits that i am no good at") #tell the player which room they are in    
@@ -358,7 +352,6 @@ def room5():
             mvnt = input()
     clrscrn()
 
-
 def room6():
     clrscrn()
     print ("you have entered a room, its cold, blah blah blah discriptive bits that i am no good at") #tell the player which room they are in    
@@ -382,7 +375,6 @@ def room6():
             mvnt == 0
             mvnt = input()
     
-
 def bossroom():
     clrscrn()
     print ("THIS IS THE BOSS BITCH") #tell the player which room they are in    
