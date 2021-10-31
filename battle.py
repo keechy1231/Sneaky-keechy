@@ -11,6 +11,7 @@ def clrscrn():
     else:
         _=os.system('cls')
 
+
 def typing(text):
     for character in text:
         sys.stdout.write(character)
