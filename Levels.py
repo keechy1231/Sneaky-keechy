@@ -23,9 +23,9 @@ def level(char,): #Level system for the hero
         char['lvl'] += 1 #level will go up by 1
         char['xp'] = char['xp'] - char['lvlnext'] #take xp away from lvlnext to get new xp value
         char['lvlnext'] = round(char['lvlnext'] * 1.2) #make lvlnext xp increase as the char levels up
-        char['ATK'] += 1 #increase base atk stat
-        char['DEF'] += 1 #increase base def stat
-        char['HP'] +=1 #increase base HP stat
+        char['ATK'] += 5 #increase base atk stat
+        char['DEF'] += 5 #increase base def stat
+        char['HP'] +=5 #increase base HP stat
         if char["xp"] < char["lvlnext"]: #once the char can level no more output the below to show new stats. 
             print("Congratulations you have reached level " + str(char["lvl"]))
             print("Current XP             " + str(char["xp"]))

@@ -498,14 +498,14 @@ char = {'HP':10,'ATK':10,'DEF':10,'LVL':1,'XP':0,'LVLNEXT':10}
 
 #enemy dictionary for the function to be defined
 enemylist = {
-    "Imp"    : {'ehp':10, 'eatk':10, 'edef':10, 'expgain':10},
-    "Ogre"   : {'ehp':15, 'eatk':11, 'edef':12, 'expgain':13},
-    "Dwarf"  : {'ehp':10, 'eatk':11, 'edef':12, 'expgain':13},
-    "Tiny Hands" : {'ehp':10, 'eatk':11, 'edef':12, 'expgain':13},
-    "Giant"  : {'ehp':10, 'eatk':11, 'edef':12, 'expgain':13},
-    "Goblin" : {'ehp':10, 'eatk':11, 'edef':12, 'expgain':13},
-    "Ghoul"  : {'ehp':10, 'eatk':11, 'edef':12, 'expgain':13},
-    "Psycho" : {'ehp':10, 'eatk':11, 'edef':12, 'expgain':13}}
+    "Imp"    : {'ehp':1.1, 'eatk':0.7, 'edef':0.8, 'expgain':10},
+    "Ogre"   : {'ehp':1.1, 'eatk':0.7, 'edef':0.8, 'expgain':13},
+    "Dwarf"  : {'ehp':1.1, 'eatk':0.7, 'edef':0.8, 'expgain':13},
+    "Tiny Hands" : {'ehp':1.3, 'eatk':1.3, 'edef':1.3, 'expgain':13},
+    "Giant"  : {'ehp':1.1, 'eatk':0.7, 'edef':0.8, 'expgain':13},
+    "Goblin" : {'ehp':1.1, 'eatk':0.7, 'edef':0.8, 'expgain':13},
+    "Ghoul"  : {'ehp':1.1, 'eatk':0.7, 'edef':0.8, 'expgain':13},
+    "Psycho" : {'ehp':1.1, 'eatk':0.7, 'edef':0.8, 'expgain':13}}
 
 #inventory dictionary
 inventory = {'HPpotion':10, 'ATKpotion':10}

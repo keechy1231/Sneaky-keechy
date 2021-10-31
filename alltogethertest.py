@@ -17,7 +17,7 @@ def typing(text):
     for character in text:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.03)
+        time.sleep(0.04)
                 
 def clrscrn():
     if os.name == 'posix':
