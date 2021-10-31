@@ -16,20 +16,8 @@ def typing(text):
     for character in text:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.05)
-        
-def ftyping(text):
-    for character in text:
-        sys.stdout.write(character)
-        sys.stdout.flush()
-        time.sleep(0.04)
-        
-def styping(text):
-    for character in text:
-        sys.stdout.write(character)
-        sys.stdout.flush()
-        time.sleep(0.08)
-        
+        time.sleep(0.03)
+                
 def clrscrn():
     if os.name == 'posix':
         _=os.system("clear")
