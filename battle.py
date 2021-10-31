@@ -507,6 +507,10 @@ enemylist = {
     "Ghoul"  : {'ehp':1.1, 'eatk':0.7, 'edef':0.8, 'expgain':13},
     "Psycho" : {'ehp':1.1, 'eatk':0.7, 'edef':0.8, 'expgain':13}}
 
+#dict for the boss
+boss = {'bhp':150, 'batk':150, 'bdef':150 'expgain':9001}
+
+
 #inventory dictionary
 inventory = {'HPpotion':10, 'ATKpotion':10}
 
