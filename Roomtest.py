@@ -880,7 +880,7 @@ enemylist = {
     "Psycho" : {'ehp':1.1, 'eatk':0.7, 'edef':0.8, 'expgain':13}}
 
 #inventory dictionary
-inventory = {'HPpotion':10, 'ATKpotion':10}
+inventory = {'HPpotion':2, 'ATKpotion':2}
 
 #dict for the boss
 boss = {'ehp':150, 'eatk':150, 'edef':150, 'expgain':9001,'boss_room':0}
