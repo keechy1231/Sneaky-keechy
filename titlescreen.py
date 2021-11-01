@@ -8,14 +8,38 @@ import textwrap
 
 os.system('mode con: cols=190 lines=45')
 
+#typing function for the game
 def typing(text):
     for character in text:
         sys.stdout.write(character)
         sys.stdout.flush()
         time.sleep(0.03)
-        
+ 
+#credits for when you die and or chose them at the begining        
+def credits():
+    clrscrn()
+    print ("Created by;\nJason Mutter\nTomas Keech\n\nTwo Welsh idiots who have never met decided to make a python text game without any previous coding experience.\nWe hope you enjoyed our first iteration. There will be more!!\n\n\n\n")
+    print ( '''
+     :::    ::: :::::::::: :::::::::: ::::::::  :::    ::: :::   :::           :::     ::::    ::: :::::::::         ::::::::  ::::    ::: ::::::::::     :::     :::    ::: :::   ::: 
+     :+:   :+:  :+:        :+:       :+:    :+: :+:    :+: :+:   :+:         :+: :+:   :+:+:   :+: :+:    :+:       :+:    :+: :+:+:   :+: :+:          :+: :+:   :+:   :+:  :+:   :+: 
+     +:+  +:+   +:+        +:+       +:+        +:+    +:+  +:+ +:+         +:+   +:+  :+:+:+  +:+ +:+    +:+       +:+        :+:+:+  +:+ +:+         +:+   +:+  +:+  +:+    +:+ +:+  
+     +#++:++    +#++:++#   +#++:++#  +#+        +#++:++#++   +#++:         +#++:++#++: +#+ +:+ +#+ +#+    +:+       +#++:++#++ +#+ +:+ +#+ +#++:++#   +#++:++#++: +#++:++      +#++:   
+     +#+  +#+   +#+        +#+       +#+        +#+    +#+    +#+          +#+     +#+ +#+  +#+#+# +#+    +#+              +#+ +#+  +#+#+# +#+        +#+     +#+ +#+  +#+      +#+    
+     #+#   #+#  #+#        #+#       #+#    #+# #+#    #+#    #+#          #+#     #+# #+#   #+#+# #+#    #+#       #+#    #+# #+#   #+#+# #+#        #+#     #+# #+#   #+#     #+#    
+     ###    ### ########## ########## ########  ###    ###    ###          ###     ### ###    #### #########         ########  ###    #### ########## ###     ### ###    ###    ###    ''')
+    back = input ("\n\n\n\n\n\n\nPress Enter to return to Title Screen, Or type exit to exit")
+    while 0 == 0 and back != 0:
+        if back == (""):
+            clrscrn()
+            title_screen()
+        elif back == ("exit") or back == ("Exit"):
+            os.system (exit)
+        else:
+            print("Press Enter to return to Title Screen")
+            back = 0
+            back = input()
 
-        
+#clear screen function        
 def clrscrn():
     if os.name == 'posix':
         _=os.system("clear")
@@ -25,7 +49,7 @@ def clrscrn():
 def start():
     clrscrn()
     time.sleep(3)        
-    typing ("Welcome to The Starter.  A text based RPG made by two people who have no coding experience.\n\n\n\n\nCreated by;\n")
+    typing ("Welcome to The Starter.  A text based RPG made by two people who have no coding experience.\nIn this game you will chose from three classes to start your adventure.\nLevel up and become strong enough to take on the boss, you can fight as many enimies as you like before you fight the boss.  \n\n\n\n\n\n\n\n\n\n\nCreated by;\n\n")
     time.sleep(1)
     print ( '''
      :::    ::: :::::::::: :::::::::: ::::::::  :::    ::: :::   :::           :::     ::::    ::: :::::::::         ::::::::  ::::    ::: ::::::::::     :::     :::    ::: :::   ::: 
@@ -36,8 +60,8 @@ def start():
      #+#   #+#  #+#        #+#       #+#    #+# #+#    #+#    #+#          #+#     #+# #+#   #+#+# #+#    #+#       #+#    #+# #+#   #+#+# #+#        #+#     #+# #+#   #+#     #+#    
      ###    ### ########## ########## ########  ###    ###    ###          ###     ### ###    #### #########         ########  ###    #### ########## ###     ### ###    ###    ###    ''')            
     time.sleep(5)
-    print ("\n\n\n\n\n\n\n\n\n\n\n\n")
-   
+    print ("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
+    #loop to get input needed to enter the game
     go = input("Please Press Enter to Begin\n")
     while 0 == 0 and go != 0:
         if go == ("") or go ==  (""):
@@ -49,6 +73,7 @@ def start():
                 go = input()
 
 def title_screen_select():
+    #loop to get the correct input from the title_screen so that the player cannot type anything and freeze the game
     option = input()
     while 0 == 0 and option != 0:
         if option == ("play") or option ==  ("Play"):
@@ -113,23 +138,22 @@ def title_screen():
     print("                                                                                             Exit")
     print("                                                  ###########################################################################################")
     title_screen_select()
-    
+
+#death seq - not currently being used.     
 def deathseq():
      #if (char['HP'] <= 0):
         print ("You have been slain by the" + enemy_pick)
         time.sleep(4)
         endscr()
 
-
 def endscr():        #endscreen for when you die
     clrscrn()
     
-    
-    redo = input ("Thank you for playing our game, If you would like to play again Press 1, Press 2 to exit\n")
+    #function to replay the game or exit
+    redo = input ("Thank you for playing our game, If you would like to play again press 1, to exit press 2\n") 
     if redo == ("1"):
         title_screen()
     elif redo == ("2"):
-        credits()
+        os.system(exit)
     
-
 title_screen()

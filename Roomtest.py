@@ -3,7 +3,7 @@ import os
 import sys
 import cmd
 import random
-import time 
+import time
 
 def typing(text):
     for character in text:
@@ -352,7 +352,7 @@ def battle_sequence(enemylist,char,inventory):
             print(estring)
             print("Enemy HP:        " + str(ehp) + "/" + str(emhp))
             print("\nPlayer HP:       " + str(HP) + "/" + str(char["HP"]))
-            print("Player Armor:   " + str(DEF) + "/" + str(char["DEF"])+"\n")
+            print("Player Armor:   " + str(DEF) + "/" + str(char["DEF"])+"\n\n")
             print("OPPONENTS TURN\n")
             time.sleep(1)
             opponent_randomiser1 = random.randint(0,1)
@@ -503,7 +503,7 @@ def battle_sequence(enemylist,char,inventory):
 
 
 def room1():
-    #the lair
+#the lair
     clrscrn()
     global room
     global room_string
@@ -527,14 +527,20 @@ def room1():
     typing("\nSearching the chamber you find a sconce and using a tinderbox you light a small fire lighting up this space.  ")   
     time.sleep(2)
     typing("\nAs you turn you see it.")
+    time.sleep(2)
     clrscrn()
-    time.sleep(1)
 
     battle_sequence(enemylist, char, inventory)
 
     print ("congratulations you have defeted the " +str(epickname) +" in its lair")
 
-    #small chance challange that can get the player either an atack potion or a hp potion
+    item_find = random.randint(0,2)
+    if item_find == 1:
+        typing("You found a health potion on the fallen "+str(epickname))
+        inventory["HPpotion"] += 1
+    elif item_find == 2:
+        typing("You found a attack potion on the fallen "+str(epickname))
+        inventory["ATKpotion"] += 1
         
     mvnt = input("to your East there is a big black door, its open.\nTo your West there is a dark corridor, which way will you go?\n(Type E or W to proceed)")
     while 0 == 0 and mvnt != 0:
@@ -550,7 +556,7 @@ def room1():
  
  
 def room2():
-    #the cavern
+#the cavern
     clrscrn()
     global room
     global room_string
@@ -567,20 +573,26 @@ def room2():
     time.sleep(0.3)
     typing("\nStalagmites hang low offering sharp obstacles to traverse in this desolate cave with their counterpart stalactites jutting from the land.")
     time.sleep(0.3)
-    typing("\nVoids and crevices dot the floor in uneven patterns giving access to insects, arachnids and small rodents between the caves chambers")
+    typing("\nVoids and crevices dot the floor in uneven patterns giving access to insects, arachnids and small rodents between the caves chambers.")
     time.sleep(0.3)
     typing("\nTravel through this area leads you through a crawlspace to a small cavern where small tunnels lead out in other directions.")
     time.sleep(0.3)
     typing("\nA large hole in the floor gazes down into the darkness bellow.")   
     time.sleep(2)
     typing("\nNoise emanates from bellow before something emerges.")
+    time.sleep(2)
     clrscrn()
-    time.sleep(1)
 
     battle_sequence(enemylist, char, inventory)
-    print ("congratulations you have defeted the " +str(epick) +" in its lair")
+    print ("congratulations you have defeted the " +str(epickname) +" under the caverns.")
     
-    #small chance challange that can get the player either an atack potion or a hp potion
+    item_find = random.randint(0,1,2)
+    if item_find == 1:
+        typing("You found a health potion on the fallen "+str(epickname))
+        inventory["HPpotion"] += 1
+    elif item_find == 2:
+        typing("You found a attack potion on the fallen "+str(epickname))
+        inventory["ATKpotion"] += 1
         
     mvnt = input("(Type S or E to proceed)")
     while 0 == 0 and mvnt != 0:
@@ -596,7 +608,7 @@ def room2():
 
 
 def room3():
-    #the Grotto
+#the Grotto
     clrscrn()
     global room
     global room_string
@@ -609,12 +621,30 @@ def room3():
     '''
     print(room_string)
 
+    typing("\nThe first thing that hits you is the humidity, the warm damp air drawn through this tunnel.")
+    time.sleep(0.3)
+    typing("\nGreenery grows here in the underground, possibly a food source for the denizens of this place.")
+    time.sleep(0.3)
+    typing("\nMoss covered rocks and deep plant life wrap the ground and walls ubiquitously.")
+    time.sleep(0.3)
+    typing("\nA thin bead of sunlight stems from a fissure in the grottos ceiling, the cause of this underground natural balance.")
+    time.sleep(0.3)
+    typing("\nThe slippery surface makes travel difficult here and even though the ray  of light give a semblance of freedom the spaces closeness still pushes on you.")   
+    time.sleep(2)
+    typing("\nSuddenly a blanket of moss from a near wall falls away revealing it.")
+    time.sleep(2)
     clrscrn()
-    print ("you have entered a room, its cold, blah blah blah discriptive bits that i am no good at") #tell the player which room they are in    
-    battle_sequence(enemylist, char, inventory)
-    print ("congratulations you have defeted the " +str(epick) +" in its lair")
 
-    #small chance challange that can get the player either an atack potion or a hp potion
+    battle_sequence(enemylist, char, inventory)
+    print ("congratulations you have defeted the " +str(epickname) +" inside the grotto.")
+
+    item_find = random.randint(0,1,2)
+    if item_find == 1:
+        typing("You found a health potion on the fallen "+str(epickname))
+        inventory["HPpotion"] += 1
+    elif item_find == 2:
+        typing("You found a attack potion on the fallen "+str(epickname))
+        inventory["ATKpotion"] += 1
         
     mvnt = input("(Type S or W to proceed)")
     while 0 == 0 and mvnt != 0:
@@ -629,7 +659,7 @@ def room3():
     
 
 def room4():
-    #the gorge
+#the gorge
     clrscrn()
     global room
     global room_string
@@ -642,12 +672,30 @@ def room4():
     '''
     print(room_string)
 
+    typing("\nA smooth stone chamber and winding tunnels intersect from here heading into water between your knees and neck deep.")
+    time.sleep(0.3)
+    typing("\nHeading up from here you find yourself standing thirty meters above the water in a circular space where three natural stone bridges cross the water on differing levels.")
+    time.sleep(0.3)
+    typing("\nHigher and higher you climb following the trail, still dripping wet from being in the water below.")
+    time.sleep(0.3)
+    typing("\nRounding a bend past the highest of the bridges you stumble across a much deeper cut in the land.")
+    time.sleep(0.3)
+    typing("\nA cavern deeper that you can see is before you with another natural bridge crossing it close to the ceiling.")   
+    time.sleep(2)
+    typing("\nAs you begin to cross a sound catches you from behind.")
+    time.sleep(2)
     clrscrn()
-    print ("you have entered a room, its cold, blah blah blah discriptive bits that i am no good at") #tell the player which room they are in    
-    battle_sequence(enemylist, char, inventory)  
-    print ("congratulations you have defeted the " +str(epick) +" in its lair")
 
-    #small chance challange that can get the player either an atack potion or a hp potion
+    battle_sequence(enemylist, char, inventory)  
+    print ("congratulations you have defeted the " +str(epickname) +" in the gorge.")
+
+    item_find = random.randint(0,1,2)
+    if item_find == 1:
+        typing("You found a health potion on the fallen "+str(epickname))
+        inventory["HPpotion"] += 1
+    elif item_find == 2:
+        typing("You found a attack potion on the fallen "+str(epickname))
+        inventory["ATKpotion"] += 1
         
     mvnt = input("(Type N or E to proceed)")
     while 0 == 0 and mvnt != 0:
@@ -661,7 +709,7 @@ def room4():
             mvnt = input()
 
 def room5():
-    #the Tomb
+#the Tomb
     clrscrn()
     global room
     global room_string
@@ -674,12 +722,30 @@ def room5():
     '''
     print(roomstring)
 
+    typing("\nOnce again you are in total darkness.")
+    time.sleep(0.3)
+    typing("\nFeeling the walls as you move you figure yourself to be within some cut stone chamber.")
+    time.sleep(0.3)
+    typing("\nA cool but damp air draughts throughout the space bringing with it the smell of decay.")
+    time.sleep(0.3)
+    typing("\nLighting a torch you see nearby you a number of stonework coffins become visible, you are within a place of rest.")
+    time.sleep(0.3)
+    typing("\nA cracking sound originates from one of the stone caskets as the lid drops to the floor.")   
+    time.sleep(2)
+    typing("\nNext to the container you see it.")
+    time.sleep(2)
     clrscrn()
-    print ("you have entered a room, its cold, blah blah blah discriptive bits that i am no good at") #tell the player which room they are in    
-    battle_sequence(enemylist, char, inventory)
-    print ("congratulations you have defeted the " +str(epick) +" in its lair")
 
-    #small chance challange that can get the player either an atack potion or a hp potion
+    battle_sequence(enemylist, char, inventory)
+    print ("congratulations you have defeted the " +str(epickname) +" in the tomb.")
+
+    item_find = random.randint(0,1,2)
+    if item_find == 1:
+        typing("You found a health potion on the fallen "+str(epickname))
+        inventory["HPpotion"] += 1
+    elif item_find == 2:
+        typing("You found a attack potion on the fallen "+str(epickname))
+        inventory["ATKpotion"] += 1
 
     mvnt = input("(Type N or W to proceed)")
     while 0 == 0 and mvnt != 0:
@@ -695,7 +761,7 @@ def room5():
 
 
 def room6():
-    #the scorched chambers
+#the scorched chambers
     clrscrn()
     global room
     global room_string
@@ -708,12 +774,30 @@ def room6():
     '''
     print(roomstring)
 
+    typing("\nA thickness to the air fills your nose as a stuffy burnt aroma begins to overwhelm you.")
+    time.sleep(0.3)
+    typing("\nA dimly lit chamber lies in ahead with walls and ceiling coated in a fine black powder.")
+    time.sleep(0.3)
+    typing("\nSoot! Soot is coating this chamber, a thick coating from something burning.")
+    time.sleep(0.3)
+    typing("\nBut what has been burning.")
+    time.sleep(0.3)
+    typing("\nA crash behind you forces you to start and turn.")   
+    time.sleep(2)
+    typing("\nIn the shadows of soot it appears.")
+    time.sleep(2)
     clrscrn()
-    print ("you have entered a room, its cold, blah blah blah discriptive bits that i am no good at") #tell the player which room they are in    
+
     battle_sequence(enemylist, char, inventory)
-    print ("congratulations you have defeted the " +str(epick) +" in its lair")
-    
-    #small chance challange that can get the player either an atack potion or a hp potion
+    print ("congratulations you have defeted the " +str(epickname) +" within the scorched chamber.")
+
+    item_find = random.randint(0,1,2)
+    if item_find == 1:
+        typing("You found a health potion on the fallen "+str(epickname))
+        inventory["HPpotion"] += 1
+    elif item_find == 2:
+        typing("You found a attack potion on the fallen "+str(epickname))
+        inventory["ATKpotion"] += 1
 
     mvnt = input("(THE BOSS ROOM IS TO THE NORTH Type W or E OR N to proceed)")
     while 0 == 0 and mvnt != 0:
