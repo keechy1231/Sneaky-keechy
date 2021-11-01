@@ -9,7 +9,7 @@ def typing(text):
     for character in text:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.05)
+        time.sleep(0.00)
 
 def clrscrn():
     if os.name == 'posix':
@@ -17,7 +17,7 @@ def clrscrn():
     else:
         _=os.system('cls')
 
-def level(char): 
+def level(char,): 
 #Level system for the hero
        while char['XP'] >= char['LVLNEXT']: 
 #if xp is greater to or equal to lvlnext xp then go through the below commands
@@ -27,11 +27,11 @@ def level(char):
 #take xp away from lvlnext to get new xp value
         char['LVLNEXT'] = round(char['LVLNEXT'] * 1.2) 
 #make lvlnext xp increase as the char levels up
-        char['ATK'] += 1 
+        char['ATK'] +=5
 #increase base atk stat
-        char['DEF'] += 1 
+        char['DEF'] +=5
 #increase base def stat
-        char['HP'] +=1 
+        char['HP'] +=5
 #increase base HP stat
         if char["XP"] < char["LVLNEXT"]: 
 #once the char can level no more output the below to show new stats. 
@@ -57,7 +57,7 @@ def endscr():        #endscreen for when you die
     elif redo == ("2"):
         os.system(exit)
 
-def enemy_pick(enemylist,char):
+def enemy_pick(enemylist,char,boss):
 #picks a random enemy from the dictionary enemylist
     enemypick = (random.choice(list(enemylist.items())))
 
@@ -160,67 +160,93 @@ def enemy_pick(enemylist,char):
 
 '''
 
+    Starter_Dragon_String = '''
 
-    if epickname == "Imp":
-        estring = Imp_string
+████████╗██╗░░██╗███████╗  ░██████╗████████╗░█████╗░██████╗░████████╗███████╗██████╗░
+╚══██╔══╝██║░░██║██╔════╝  ██╔════╝╚══██╔══╝██╔══██╗██╔══██╗╚══██╔══╝██╔════╝██╔══██╗
+░░░██║░░░███████║█████╗░░  ╚█████╗░░░░██║░░░███████║██████╔╝░░░██║░░░█████╗░░██████╔╝
+░░░██║░░░██╔══██║██╔══╝░░  ░╚═══██╗░░░██║░░░██╔══██║██╔══██╗░░░██║░░░██╔══╝░░██╔══██╗
+░░░██║░░░██║░░██║███████╗  ██████╔╝░░░██║░░░██║░░██║██║░░██║░░░██║░░░███████╗██║░░██║
+░░░╚═╝░░░╚═╝░░╚═╝╚══════╝  ╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░╚══════╝╚═╝░░╚═╝
+
+██████╗░██████╗░░█████╗░░██████╗░░█████╗░███╗░░██╗
+██╔══██╗██╔══██╗██╔══██╗██╔════╝░██╔══██╗████╗░██║
+██║░░██║██████╔╝███████║██║░░██╗░██║░░██║██╔██╗██║
+██║░░██║██╔══██╗██╔══██║██║░░╚██╗██║░░██║██║╚████║
+██████╔╝██║░░██║██║░░██║╚██████╔╝╚█████╔╝██║░╚███║
+╚═════╝░╚═╝░░╚═╝╚═╝░░╚═╝░╚═════╝░░╚════╝░╚═╝░░╚══╝
+
+'''
+    if boss["boss_room"] == 1:
+        epickname = "The Starter Dragon"
+        estring = Starter_Dragon_String
         print(estring)
+        epick = boss
         print("\n")
-        typing("A small winged demon crouches in front of you.\nIts sharp teeth gnarled and stained from devouring meat and bones.\nThe creature bounds back as it sees you then leaps!")
-        time.sleep(3)
+        typing("It stands ahead, the cause and reason for your dungeon delving.\nThe beast which has plagued your people for generations.\nThe alabaster horror. The starter.")
+        time.sleep(3)    
+    else:
 
-    elif epickname == "Ogre":
-        estring = Ogre_string
-        print(estring)
-        print("\n")
-        typing("A mammoth of a humanoid stands stooped in front of you.\nTheir head scraping on the ceiling as it mulls around its lair.\nIt looks at you and after a few seconds of pondering begins at you!")
-        time.sleep(3)
+        if epickname == "Imp":
+            estring = Imp_string
+            print(estring)
+            print("\n")
+            typing("A small winged demon crouches in front of you.\nIts sharp teeth gnarled and stained from devouring meat and bones.\nThe creature bounds back as it sees you then leaps!")
+            time.sleep(3)
 
-    elif epickname == "Dwarf":
-        estring = Dwarf_string
-        print(estring)
-        print("\n")
-        typing("A stout, short man stumbles ahead of you.\nStains on his long beard and alcohol on his breath he stares at the doorway you stand in.\nHe raises his axe and charges!")
-        time.sleep(3)
+        elif epickname == "Ogre":
+            estring = Ogre_string
+            print(estring)
+            print("\n")
+            typing("A mammoth of a humanoid stands stooped in front of you.\nTheir head scraping on the ceiling as it mulls around its lair.\nIt looks at you and after a few seconds of pondering begins at you!")
+            time.sleep(3)
 
-    elif epickname == "Tiny Hands":
-        estring = Bird_string
-        print(estring)
-        print("\n")
-        typing("An elongated frame hunches over a bench.\nHolding out a ladle with a mushroom in, their grin widens to a full toothed maw.\nA cleaver is lifted and he begins to advance!")
-        time.sleep(3)
+        elif epickname == "Dwarf":
+            estring = Dwarf_string
+            print(estring)
+            print("\n")
+            typing("A stout, short man stumbles ahead of you.\nStains on his long beard and alcohol on his breath he stares at the doorway you stand in.\nHe raises his axe and charges!")
+            time.sleep(3)
 
-    elif epickname == "Giant":
-        estring = Giant_string
-        print(estring)
-        print("\n")
-        typing("Crawling in this chamber lies a giant.\nIts form too large to even stand its bloodied knees scraped and calloused from the hard stone.\nHis reaching hand scratch towards your direction!")
-        time.sleep(3)
+        elif epickname == "Tiny Hands":
+            estring = Bird_string
+            print(estring)
+            print("\n")
+            typing("An elongated frame hunches over a bench.\nHolding out a ladle with a mushroom in, their grin widens to a full toothed maw.\nA cleaver is lifted and he begins to advance!")
+            time.sleep(3)
 
-    elif epickname == "Goblin":
-        estring = Goblin_string
-        print(estring)
-        print("\n")
-        typing("It’s a goblin.........really?\nSo there are giants and Demons but we give him a goblin to fight?\nOkay then, here’s a goblin.......")
-        time.sleep(3)
+        elif epickname == "Giant":
+            estring = Giant_string
+            print(estring)
+            print("\n")
+            typing("Crawling in this chamber lies a giant.\nIts form too large to even stand its bloodied knees scraped and calloused from the hard stone.\nHis reaching hand scratch towards your direction!")
+            time.sleep(3)
 
-    elif epickname == "Ghoul":
-        estring = Ghoul_string
-        print(estring)
-        print("\n")
-        typing("A ghastly figure floats ahead.\nIts hollow form and featureless face stressed in a painful simulation.\nlifting its hand the air converts to an iced consistency!")
-        time.sleep(3)
+        elif epickname == "Goblin":
+            estring = Goblin_string
+            print(estring)
+            print("\n")
+            typing("It’s a goblin.........really?\nSo there are giants and Demons but we give him a goblin to fight?\nOkay then, here’s a goblin.......")
+            time.sleep(3)
 
-    elif epickname == "Psycho":
-        estring = Psycho_string
-        print(estring)
-        print("\n")
-        typing("A woman lounges in a chair in the leading chamber.\nClutching a hatchet coated in blood she screams at your sight.\nflinging the chair behind her she manically sprints for you!")
-        time.sleep(3)
+        elif epickname == "Ghoul":
+            estring = Ghoul_string
+            print(estring)
+            print("\n")
+            typing("A ghastly figure floats ahead.\nIts hollow form and featureless face stressed in a painful simulation.\nlifting its hand the air converts to an iced consistency!")
+            time.sleep(3)
 
-def battle_sequence(enemylist,char,inventory):
+        elif epickname == "Psycho":
+            estring = Psycho_string
+            print(estring)
+            print("\n")
+            typing("A woman lounges in a chair in the leading chamber.\nClutching a hatchet coated in blood she screams at your sight.\nflinging the chair behind her she manically sprints for you!")
+            time.sleep(3)
+
+def battle_sequence(enemylist,char,inventory,boss):
 
 #choose the random enemy and set their
-    enemy_pick(enemylist,char)
+    enemy_pick(enemylist,char,boss)
 
 #define local variables for the player stats to be used here for ease
     HP = char["HP"]
@@ -231,19 +257,29 @@ def battle_sequence(enemylist,char,inventory):
     global eatk
     global edef
     global expgain
+    global emhp
+    global emdef
 
     ehp = epick["ehp"]
     eatk = epick["eatk"]
     edef = epick["edef"]
     expgain = epick["expgain"]
     emhp = epick["ehp"]
+    emdef = epick["edef"]
 
-    ehp *= char["LVL"]
-    eatk *= char["LVL"]
-    edef *= char["LVL"]
-    expgain *= char["LVL"]
-    emhp *= char["LVL"]
+    if boss["boss_room"] != 1:
+        ehp *= round((char["HP"]+char["DEF"]+char["ATK"])/3)
+        eatk *= round((char["HP"]+char["DEF"]+char["ATK"])/3)
+        edef *= round((char["HP"]+char["DEF"]+char["ATK"])/3)
+        emhp *= round((char["HP"]+char["DEF"]+char["ATK"])/3)
+        edef *= round((char["HP"]+char["DEF"]+char["ATK"])/3)
 
+        ehp = int(ehp)
+        eatk = int(eatk)
+        edef =  int(edef)
+        emhp = int(emhp)
+        edef = int(edef)
+        ematk = eatk
 
 #making a round counter for the battle not used fully yet
     Battle_round = 0
@@ -265,7 +301,7 @@ def battle_sequence(enemylist,char,inventory):
             print(estring)
             print("Enemy HP:        " + str(ehp) + "/" + str(emhp))
             print("\nPlayer HP:       " + str(HP) + "/" + str(char["HP"]))
-            print("Player Armor:   " + str(DEF) + "/" + str(char["DEF"])+"\n")
+            print("Player Armor:    " + str(DEF) + "/" + str(char["DEF"])+"\n")
             print("\nPLAYERS TURN\n")
 
             print("Choose your action:")
@@ -352,7 +388,7 @@ def battle_sequence(enemylist,char,inventory):
             print(estring)
             print("Enemy HP:        " + str(ehp) + "/" + str(emhp))
             print("\nPlayer HP:       " + str(HP) + "/" + str(char["HP"]))
-            print("Player Armor:   " + str(DEF) + "/" + str(char["DEF"])+"\n\n")
+            print("Player Armor:    " + str(DEF) + "/" + str(char["DEF"])+"\n\n")
             print("OPPONENTS TURN\n")
             time.sleep(1)
             opponent_randomiser1 = random.randint(0,1)
@@ -375,20 +411,20 @@ def battle_sequence(enemylist,char,inventory):
                     if DEF < 0 :
                         DEF = 0
                         typing("Your opponent broke through your armor\n")
-                    eatk = epick["eatk"]
+                    eatk = ematk
                 else:
 #enemy defense function
                     typing(epickname + " is defending!"+"\n")
-                    edef += round(0.7 * epick["edef"])
-                    if edef > epick["edef"]:
-                        edef = epick["edef"]
+                    edef += round(0.7 * emdef)
+                    if edef > emdef:
+                        edef = emdef
             else:
 #enemy defense function
                 if edef == 0 and HP > eatk-5:
                     typing(epickname + " is defending!"+"\n")
-                    edef += round(0.7 * epick["edef"])
-                    if edef > epick["edef"]:
-                        edef = epick["edef"]
+                    edef += round(0.7 * emdef)
+                    if edef > emdef:
+                        edef = emdef
                 else:
 #enemy attack function
                     typing(epickname + " is attacking!"+"\n")
@@ -406,7 +442,7 @@ def battle_sequence(enemylist,char,inventory):
                     if DEF < 0 :
                         DEF = 0
                         typing("Your opponent broke through your armor"+"\n")
-                    eatk = epick["eatk"]
+                    eatk = ematk
             time.sleep(2)
             Battle_choice = 5
             
@@ -417,7 +453,7 @@ def battle_sequence(enemylist,char,inventory):
                     print(estring)
                     print("Enemy HP:        " + str(ehp) + "/" + str(emhp))
                     print("\nPlayer HP:       " + str(HP) + "/" + str(char["HP"]))
-                    print("Player Armor:   " + str(DEF) + "/" + str(char["DEF"])+ "\n")
+                    print("Player Armor:    " + str(DEF) + "/" + str(char["DEF"])+ "\n")
                     print("\nPLAYERS TURN\n")
                     print("\nChoose your action:")
                     print("1 Attack         " + str(ATK))
@@ -499,8 +535,10 @@ def battle_sequence(enemylist,char,inventory):
             level(char)
         else:
             clrscrn()
-            typing("You have died"+"\n")
-
+            typing ("You have been slain by " + epickname + ".\nSomeone else will have to finish your quest, or maybe Dewi will complete it alone.")
+            time.sleep(2)
+            clrscrn()
+            #endscr()
 
 def room1(inventory):
 #the lair
@@ -530,7 +568,7 @@ def room1(inventory):
     time.sleep(2)
     clrscrn()
 
-    battle_sequence(enemylist, char, inventory)
+    battle_sequence(enemylist,char,inventory,boss)
 
     print ("congratulations you have defeted the " +str(epickname) +" in its lair")
 
@@ -553,7 +591,6 @@ def room1(inventory):
             mvnt == 0
             mvnt = input()
     clrscrn()
- 
  
 def room2(inventory):
 #the cavern
@@ -583,7 +620,7 @@ def room2(inventory):
     time.sleep(2)
     clrscrn()
 
-    battle_sequence(enemylist, char, inventory)
+    battle_sequence(enemylist,char,inventory,boss)
     print ("congratulations you have defeted the " +str(epickname) +" under the caverns.")
     
     item_find = random.randint(0,2)
@@ -605,8 +642,6 @@ def room2(inventory):
             mvnt == 0
             mvnt = input()
     
-
-
 def room3(inventory):
 #the Grotto
     clrscrn()
@@ -635,7 +670,7 @@ def room3(inventory):
     time.sleep(2)
     clrscrn()
 
-    battle_sequence(enemylist, char, inventory)
+    battle_sequence(enemylist,char,inventory,boss)
     print ("congratulations you have defeted the " +str(epickname) +" inside the grotto.")
 
     item_find = random.randint(0,2)
@@ -657,7 +692,6 @@ def room3(inventory):
             mvnt == 0
             mvnt = input()
     
-
 def room4(inventory):
 #the gorge
     clrscrn()
@@ -686,7 +720,7 @@ def room4(inventory):
     time.sleep(2)
     clrscrn()
 
-    battle_sequence(enemylist, char, inventory)  
+    battle_sequence(enemylist,char,inventory,boss)  
     print ("congratulations you have defeted the " +str(epickname) +" in the gorge.")
 
     item_find = random.randint(0,2)
@@ -720,7 +754,7 @@ def room5(inventory):
     ███─███─▄─██─▄█▀█████─███─██─██─█▄█─███─▄─▀█
     ▀▀▄▄▄▀▀▄▀▄▀▄▄▄▄▄▀▀▀▀▄▄▄▀▀▄▄▄▄▀▄▄▄▀▄▄▄▀▄▄▄▄▀▀
     '''
-    print(roomstring)
+    print(room_string)
 
     typing("\nOnce again you are in total darkness.")
     time.sleep(0.3)
@@ -736,7 +770,7 @@ def room5(inventory):
     time.sleep(2)
     clrscrn()
 
-    battle_sequence(enemylist, char, inventory)
+    battle_sequence(enemylist,char,inventory,boss)
     print ("congratulations you have defeted the " +str(epickname) +" in the tomb.")
 
     item_find = random.randint(0,2)
@@ -759,7 +793,6 @@ def room5(inventory):
             mvnt = input()
     clrscrn()
 
-
 def room6(inventory):
 #the scorched chambers
     clrscrn()
@@ -772,7 +805,7 @@ def room6(inventory):
     ███─███─▄─██─▄█▀███▄▄▄▄─█─███▀█─██─██─▄─▄█─███▀█─▄─██─▄█▀██─██─███─███▀█─▄─██─▀─███─█▄█─███─▄─▀██─▄█▀██─▄─▄█
     ▀▀▄▄▄▀▀▄▀▄▀▄▄▄▄▄▀▀▀▄▄▄▄▄▀▄▄▄▄▄▀▄▄▄▄▀▄▄▀▄▄▀▄▄▄▄▄▀▄▀▄▀▄▄▄▄▄▀▄▄▄▄▀▀▀▀▄▄▄▄▄▀▄▀▄▀▄▄▀▄▄▀▄▄▄▀▄▄▄▀▄▄▄▄▀▀▄▄▄▄▄▀▄▄▀▄▄▀
     '''
-    print(roomstring)
+    print(room_string)
 
     typing("\nA thickness to the air fills your nose as a stuffy burnt aroma begins to overwhelm you.")
     time.sleep(0.3)
@@ -788,7 +821,7 @@ def room6(inventory):
     time.sleep(2)
     clrscrn()
 
-    battle_sequence(enemylist, char, inventory)
+    battle_sequence(enemylist,char,inventory,boss)
     print ("congratulations you have defeted the " +str(epickname) +" within the scorched chamber.")
 
     item_find = random.randint(0,2)
@@ -811,35 +844,44 @@ def room6(inventory):
             print("please enter a valid command")
             mvnt == 0
             mvnt = input()
-    
-
+   
 def bossroom():
+
     clrscrn()
     print ("THIS IS THE BOSS BITCH") #tell the player which room they are in    
-    battle_sequence()
-    win = 1    
-    if win == 1: #make win function
-        print ("YAY you are so cool")
-    elif win != 1: 
-        deathseq()  #goes to the death sequence function
-        
+    time.sleep(2)
+    clrscrn()
+    time.sleep(2)
+    boss['boss_room'] = 1
+    battle_sequence(enemylist,char,inventory,boss)
+    clrscrn()
+    time.sleep(2)
+    typing("You did it……..?\nHonestly I didn’t expect you to get this far.\nThis was supposed to be beatable but the time needed to get to a level to beat this guy was silly.\nAre you okay? Can I get you some water or something?\nWell anyway, you have completed your quest.\nThe Starter Dragon has fallen and you can return home knowing that your people are safe.\n...................................")
+    time.sleep(5)
+    typing("\nFor Now")
+    time.sleep(5)
+    clrscrn()
+    typing("We look forward to seeing you in v.2")
+    time.sleep(2)
+    endscr()
 
 #charecter
 char = {'HP':10,'ATK':10,'DEF':10,'LVL':1,'XP':0,'LVLNEXT':10}
 
 #enemy dictionary for the function to be defined
 enemylist = {
-    "Imp"    : {'ehp':10, 'eatk':10, 'edef':10, 'expgain':10},
-    "Ogre"   : {'ehp':15, 'eatk':11, 'edef':12, 'expgain':13},
-    "Dwarf"  : {'ehp':10, 'eatk':11, 'edef':12, 'expgain':13},
-    "Tiny Hands" : {'ehp':10, 'eatk':11, 'edef':12, 'expgain':13},
-    "Giant"  : {'ehp':10, 'eatk':11, 'edef':12, 'expgain':13},
-    "Goblin" : {'ehp':10, 'eatk':11, 'edef':12, 'expgain':13},
-    "Ghoul"  : {'ehp':10, 'eatk':11, 'edef':12, 'expgain':13},
-    "Psycho" : {'ehp':10, 'eatk':11, 'edef':12, 'expgain':13}}
+    "Imp"    : {'ehp':1.1, 'eatk':0.7, 'edef':0.8, 'expgain':10},
+    "Ogre"   : {'ehp':1.1, 'eatk':0.7, 'edef':0.8, 'expgain':13},
+    "Dwarf"  : {'ehp':1.1, 'eatk':0.7, 'edef':0.8, 'expgain':13},
+    "Tiny Hands" : {'ehp':1.3, 'eatk':1.3, 'edef':1.3, 'expgain':13},
+    "Giant"  : {'ehp':1.1, 'eatk':0.7, 'edef':0.8, 'expgain':13},
+    "Goblin" : {'ehp':1.1, 'eatk':0.7, 'edef':0.8, 'expgain':13},
+    "Ghoul"  : {'ehp':1.1, 'eatk':0.7, 'edef':0.8, 'expgain':13},
+    "Psycho" : {'ehp':1.1, 'eatk':0.7, 'edef':0.8, 'expgain':13}}
 
 #inventory dictionary
 inventory = {'HPpotion':10, 'ATKpotion':10}
 
+#dict for the boss
+boss = {'ehp':150, 'eatk':150, 'edef':150, 'expgain':9001,'boss_room':0}
 
-room1(inventory)
