@@ -53,7 +53,7 @@ def clrscrn():
 def start():
     clrscrn()
     time.sleep(3)        
-    typing ("Welcome to The Starter.  A text based RPG made by two people who have no coding experience.\nIn this game you will choose from three classes to start your adventure.\nLevel up and become strong enough to take on the boss, you can fight as many enemies as you like before you fight the boss.  \n\n\n\n\n\n\n\n\n\n\nCreated by;\n\n")
+    typing ("Welcome to The Starter. A text based RPG made by two people who have no coding experience.\nIn this game you will choose from three classes to start your adventure.\nLevel up and become strong enough to take on the boss, you can fight as many enemies as you like before you fight the boss.  \n\n\n\n\n\n\n\n\n\n\nCreated by;\n\n")
     time.sleep(1)
     print ( '''
      :::    ::: :::::::::: :::::::::: ::::::::  :::    ::: :::   :::           :::     ::::    ::: :::::::::         ::::::::  ::::    ::: ::::::::::     :::     :::    ::: :::   ::: 
@@ -500,9 +500,9 @@ def battle_sequence(enemylist,char,inventory,boss):
             print("\nPlayer HP:       " + str(HP) + "/" + str(char["HP"]))
             print("Player Armor:    " + str(DEF) + "/" + str(char["DEF"])+"\n")
             print("\nPLAYERS TURN\n")
-            print("ehp")
-            print("edef")
-            print("eatk")
+            print(epick["ehp"])
+            print(epick["edef"])
+            print(epick["eatk"])
 
             print("Choose your action:")
             print("1 Attack         " + str(ATK))
@@ -590,9 +590,9 @@ def battle_sequence(enemylist,char,inventory,boss):
             print("\nPlayer HP:       " + str(HP) + "/" + str(char["HP"]))
             print("Player Armor:    " + str(DEF) + "/" + str(char["DEF"])+"\n\n")
             print("OPPONENTS TURN\n")
-            print("ehp")
-            print("edef")
-            print("eatk")
+            print(epick["ehp"])
+            print(epick["edef"])
+            print(epick["eatk"])
 
             time.sleep(1)
             opponent_randomiser1 = random.randint(0,1)
@@ -659,9 +659,9 @@ def battle_sequence(enemylist,char,inventory,boss):
                     print("\nPlayer HP:       " + str(HP) + "/" + str(char["HP"]))
                     print("Player Armor:    " + str(DEF) + "/" + str(char["DEF"])+ "\n")
                     print("\nPLAYERS TURN\n")
-                    print("ehp")
-                    print("edef")
-                    print("eatk")
+                    print(epick["ehp"])
+                    print(epick["edef"])
+                    print(epick["eatk"])
 
                     print("\nChoose your action:")
                     print("1 Attack         " + str(ATK))
