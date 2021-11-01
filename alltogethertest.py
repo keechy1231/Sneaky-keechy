@@ -465,17 +465,17 @@ def battle_sequence(enemylist,char,inventory,boss):
     emdef = epick["edef"]
 
     if boss["boss_room"] != 1:
-        ehp *= round((char["HP"]+char["DEF"]+char["ATK"])/3)
+        ehp *=  round((char["HP"]+char["DEF"]+char["ATK"])/3)
         eatk *= round((char["HP"]+char["DEF"]+char["ATK"])/3)
         edef *= round((char["HP"]+char["DEF"]+char["ATK"])/3)
         emhp *= round((char["HP"]+char["DEF"]+char["ATK"])/3)
-        edef *= round((char["HP"]+char["DEF"]+char["ATK"])/3)
+        emdef *= round((char["HP"]+char["DEF"]+char["ATK"])/3)
 
         ehp = int(ehp)
         eatk = int(eatk)
         edef =  int(edef)
         emhp = int(emhp)
-        edef = int(edef)
+        emdef = int(edef)
         ematk = int(eatk)
 
 #making a round counter for the battle not used fully yet
