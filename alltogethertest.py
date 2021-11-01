@@ -766,7 +766,7 @@ def room1(inventory):
     
     typing("\nYou enter the lair of the beast.")
     time.sleep(0.3)
-    typing("\nA long corridor leads you to a square chamber shrouded in darnkness which resembles a shrine for some deity.")
+    typing("\nA long corridor leads you to a square chamber shrouded in dankness which resembles a shrine for some deity.")
     time.sleep(0.3)
     typing("\nThe smell of sulfur and old blood fills your sinuses and slightly blurs your vision. ")
     time.sleep(0.3)
