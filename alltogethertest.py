@@ -204,7 +204,7 @@ def prologue(char):
         char['DEF'] = char['DEF'] * 5
         char['ATK'] = char['ATK'] * 3
         pcclass = "Soldier"
-        typing ("You are a soldier.\nYou probably lead a very boring life if you chose soldier. You hit hard and can take hits blah blah blah.... lets get on with it.\n")
+        typing ("You are a soldier.\nYou probably lead a very boring life if you choose soldier. You hit hard and can take hits blah blah blah.... lets get on with it.\n")
 
     time.sleep(2) 
     clrscrn()
@@ -474,7 +474,7 @@ def battle_sequence(enemylist,char,inventory,boss):
         edef =  int(edef)
         emhp = int(emhp)
         edef = int(edef)
-        ematk = eatk
+        ematk = int(eatk)
 
 #making a round counter for the battle not used fully yet
     Battle_round = 0
@@ -859,7 +859,7 @@ def room3(inventory):
     time.sleep(0.3)
     typing("\nA thin bead of sunlight stems from a fissure in the grottos ceiling, the cause of this underground natural balance.")
     time.sleep(0.3)
-    typing("\nThe slippery surface makes travel difficult here and even though the ray  of light give a semblance of freedom the spaces closeness still pushes on you.")   
+    typing("\nThe slippery surface makes travel difficult here and even though the ray of light give a semblance of freedom the spaces closeness still pushes on you.")   
     time.sleep(2)
     typing("\nSuddenly a blanket of moss from a near wall falls away revealing it.")
     time.sleep(5)
@@ -957,7 +957,7 @@ def room5(inventory):
     time.sleep(0.3)
     typing("\nA cool but damp air draughts throughout the space bringing with it the smell of decay.")
     time.sleep(0.3)
-    typing("\nLighting a torch you see nearby you a number of stonework coffins become visible, you are within a place of rest.")
+    typing("\nLighting a torch nearby you, a number of stonework coffins become visible, you are within a place of rest.")
     time.sleep(0.3)
     typing("\nA cracking sound originates from one of the stone caskets as the lid drops to the floor.")   
     time.sleep(2)
