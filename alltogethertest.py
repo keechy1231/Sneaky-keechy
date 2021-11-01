@@ -481,7 +481,7 @@ def battle_sequence(enemylist,char,inventory,boss):
     Battle_round = 0
 
 #pick weather the player or opponent will go first on 1 the player will go first
-    battle_start_modifier = 0  #random.randint(0,1)
+    battle_start_modifier = random.randint(0,1)
 
 #battle choice is the loop controller. 1 is replay, 0 is next step
    
@@ -1098,5 +1098,5 @@ boss = {'ehp':150, 'eatk':150, 'edef':150, 'expgain':9001,'boss_room':0}
 
 
 #game starts here
-title_screen()
-
+#title_screen()
+bossroom()
