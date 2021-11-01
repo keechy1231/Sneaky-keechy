@@ -1,8 +1,8 @@
-#I have also made changes here - will need to ouput changes to rest of files, 
+#I have also made changes here - will need to output changes to rest of files, 
 #files changed;
 
 
-#here i am going to test bringing all our work togetehr
+#here i am going to test bringing all our work together
 #Start with Title Screen
 import cmd
 import sys
@@ -19,7 +19,7 @@ def typing(text):
         sys.stdout.flush()
         time.sleep(0.04)
                     
-#credits for when you die and or chose them at the begining        
+#credits for when you die and or chose them at the beginning                
 def credits():
     clrscrn()
     print ("Created by;\nJason Mutter\nTomas Keech\n\nTwo Welsh idiots who have never met decided to make a python text game without any previous coding experience.\nWe hope you enjoyed our first iteration. There will be more!!\n\n\n\n")
@@ -53,7 +53,7 @@ def clrscrn():
 def start():
     clrscrn()
     time.sleep(3)        
-    typing ("Welcome to The Starter.  A text based RPG made by two people who have no coding experience.\nIn this game you will choose from three classes to start your adventure.\nLevel up and become strong enough to take on the boss, you can fight as many enimies as you like before you fight the boss.  \n\n\n\n\n\n\n\n\n\n\nCreated by;\n\n")
+    typing ("Welcome to The Starter.  A text based RPG made by two people who have no coding experience.\nIn this game you will choose from three classes to start your adventure.\nLevel up and become strong enough to take on the boss, you can fight as many enemies as you like before you fight the boss.  \n\n\n\n\n\n\n\n\n\n\nCreated by;\n\n")
     time.sleep(1)
     print ( '''
      :::    ::: :::::::::: :::::::::: ::::::::  :::    ::: :::   :::           :::     ::::    ::: :::::::::         ::::::::  ::::    ::: ::::::::::     :::     :::    ::: :::   ::: 
@@ -91,7 +91,7 @@ def title_screen_select():
                 option = 0
         option = input()
     
-#the opeing screen of the game    
+#the opening screen of the game    
 def title_screen():
     print (''' 
                                                                                     dMMP'
@@ -160,9 +160,9 @@ def endscr():
         os.system(exit)
 
 def prologue(char):
-    #base stats prior to class selection come from char(stats)
+#base stats prior to class selection come from char(stats)
     
-    #get a PC name logged and recorded
+#get a PC name logged and recorded
     typing ("Welcome adventurer.\n")
     time.sleep(1)
 
@@ -170,20 +170,20 @@ def prologue(char):
     time.sleep(2)
     typing("Of course you are. Great lets start!\n")
     time.sleep(1)
-    #player name
+#player name
     typing ("Lets start with your name, what should I call you?\n")
     pcname = input()
     time.sleep(1)
-    typing ("\n\nVery nice to meet you " + pcname +", now i think its time for you to meet your trusty companion.\nNo RPG is the same without a companion, even a text based one.\n")
+    typing ("\n\nVery nice to meet you " + pcname +", now i think it's time for you to meet your trusty companion.\nNo RPG is the same without a companion, even a text based one.\n")
     time.sleep(1)
 
-    typing("Lets introduce you to Dewi.\nDewi will be your trusted companion.\nWhat is Dewi I hear you ask? well he is a Belgian Sheaperd\n\n")
+    typing("Lets introduce you to Dewi.\nDewi will be your trusted companion.\nWhat is Dewi I hear you ask? well he is a Belgian Shepard\n\n")
 
-    #class selection
-    typing("Now then " + pcname + ", now for the important bit, which class best suits you?\n1.Warrior\n2.Thief\n3.Soilder\n\n\n")
+#class selection
+    typing("Now then " + pcname + ", now for the important bit, which class best suits you?\n1.Warrior\n2.Thief\n3.Soldier\n\n\n")
     question2 = input()
 
-    #warrior stats
+#warrior stats
     if question2 == "Warrior" or question2 == "warrior" or question2 == "1":
         char['HP'] = char['HP'] * 5
         char['DEF'] = char['DEF'] * 3
@@ -191,14 +191,14 @@ def prologue(char):
         pcclass = "Warrior" 
         typing ("You are a warrior! \nYou are a brave fighter, Fearless in life, a man of very few words but knows exactly how to slay his enimies.\n")
 
-    #thief stats
+#thief stats
     elif question2 == "Thief" or question2 == "thief" or question2 == "2":
         char['HP'] = char['HP'] * 3
         char['DEF'] = char['DEF'] * 3
         char['ATK'] = char['ATK'] * 5
         pcclass = "Thief"
-        typing ("You are a thief!\n.You are a master of stealth, you hide in the shadows. You relish it when your enemies underestimate you because of your size.\n")
-        #soilder stats
+        typing ("You are a thief!\nYou are a master of stealth, you hide in the shadows. You relish it when your enemies underestimate you because of your size.\n")
+#soilder stats
     elif question2 == "Soldier" or question2 == "soldier" or question2 == "3":
         char['HP'] = char['HP'] * 3
         char['DEF'] = char['DEF'] * 5
@@ -206,9 +206,8 @@ def prologue(char):
         pcclass = "Soldier"
         typing ("You are a soldier.\nYou probably lead a very boring life if you chose soldier. You hit hard and can take hits blah blah blah.... lets get on with it.\n")
 
-
+    time.sleep(2) 
     clrscrn()
-    time.sleep(2)    
     typing ("Well then my new " + pcclass + ", I hope you are happy with the results you have here as you cant change them.\n")
     time.sleep(2)
     print("Health:     " + str(char['HP']))
@@ -221,7 +220,7 @@ def prologue(char):
     
 
     typing("So are you ready for an adventure then? \nStep forward, through this door your first room awaits. " + pcname + ".\n")
-    room1()
+    room1(inventory)
 
 def level(char,): 
 #Level system for the hero
@@ -394,7 +393,7 @@ def enemy_pick(enemylist,char,boss):
             estring = Ogre_string
             print(estring)
             print("\n")
-            typing("A mammoth of a humanoid stands stooped in front of you.\nTheir head scraping on the ceiling as it mulls around its lair.\nIt looks at you and after a few seconds of pondering begins at you!")
+            typing("A mammoth of a humanoid stands stooped in front of you.\nTheir head scraping on the ceiling as it mulls around it's lair.\nIt looks at you and after a few seconds of pondering begins at you!")
             time.sleep(3)
 
         elif epickname == "Dwarf":
@@ -415,7 +414,7 @@ def enemy_pick(enemylist,char,boss):
             estring = Giant_string
             print(estring)
             print("\n")
-            typing("Crawling in this chamber lies a giant.\nIts form too large to even stand its bloodied knees scraped and calloused from the hard stone.\nHis reaching hand scratch towards your direction!")
+            typing("Crawling in this chamber lies a giant.\nIts form too large to even stand it's bloodied knees scraped and calloused from the hard stone.\nHis reaching hand scratch towards your direction!")
             time.sleep(3)
 
         elif epickname == "Goblin":
@@ -429,7 +428,7 @@ def enemy_pick(enemylist,char,boss):
             estring = Ghoul_string
             print(estring)
             print("\n")
-            typing("A ghastly figure floats ahead.\nIts hollow form and featureless face stressed in a painful simulation.\nlifting its hand the air converts to an iced consistency!")
+            typing("A ghastly figure floats ahead.\nIts hollow form and featureless face stressed in a painful simulation.\nlifting it's hand the air converts to an iced consistency!")
             time.sleep(3)
 
         elif epickname == "Psycho":
@@ -480,10 +479,10 @@ def battle_sequence(enemylist,char,inventory,boss):
 #making a round counter for the battle not used fully yet
     Battle_round = 0
 
-#pick weather the player or opponant will go first on 1 the player will go first
+#pick weather the player or opponent will go first on 1 the player will go first
     battle_start_modifier = 0  #random.randint(0,1)
 
-#battle choice is the loop controaler. 1 is replay, 0 is next step
+#battle choice is the loop controller. 1 is replay, 0 is next step
    
     Battle_choice = 5
     if battle_start_modifier == 0:
@@ -761,12 +760,12 @@ def room1(inventory):
     typing("\nSearching the chamber you find a sconce and using a tinderbox you light a small fire lighting up this space.  ")   
     time.sleep(2)
     typing("\nAs you turn you see it.")
-    time.sleep(2)
+    time.sleep(5)
     clrscrn()
 
     battle_sequence(enemylist,char,inventory,boss)
 
-    print ("congratulations you have defeted the " +str(epickname) +" in its lair")
+    print ("congratulations you have defeted the " +str(epickname) +" in it's lair")
 
     item_find = random.randint(0,2)
     if item_find == 1:
@@ -776,7 +775,7 @@ def room1(inventory):
         typing("You found a attack potion on the fallen "+str(epickname)+"\n")
         inventory["ATKpotion"] += 1
         
-    mvnt = input("to your East there is a big black door, its open.\nTo your West there is a dark corridor, which way will you go?\n(Type E or W to proceed)")
+    mvnt = input("To the East there is a mossy tunnel. To the West there is a cracked walled corridor, which way will you go?\n(Type E or W to proceed)")
     while 0 == 0 and mvnt != 0:
         if mvnt == "E" or mvnt == "e":
             room3(inventory)
@@ -827,7 +826,7 @@ def room2(inventory):
         typing("You found a attack potion on the fallen "+str(epickname)+"\n")
         inventory["ATKpotion"] += 1
         
-    mvnt = input("(Type S or E to proceed)")
+    mvnt = input("To the East there is a cracked walled corridor. To the south there is a damp and humid passage. Which way will you go?\n(Type E or S to proceed)")
     while 0 == 0 and mvnt != 0:
         if mvnt == "S" or mvnt == "s":
             room4(inventory)
@@ -863,7 +862,7 @@ def room3(inventory):
     typing("\nThe slippery surface makes travel difficult here and even though the ray  of light give a semblance of freedom the spaces closeness still pushes on you.")   
     time.sleep(2)
     typing("\nSuddenly a blanket of moss from a near wall falls away revealing it.")
-    time.sleep(2)
+    time.sleep(5)
     clrscrn()
 
     battle_sequence(enemylist,char,inventory,boss)
@@ -877,7 +876,7 @@ def room3(inventory):
         typing("You found a attack potion on the fallen "+str(epickname)+"\n")
         inventory["ATKpotion"] += 1
         
-    mvnt = input("(Type S or W to proceed)")
+    mvnt = input("To the West there is a mossy tunnel. To the south there is a carved stone passageway behind a large open door. Which way will you go?\n(Type W or S to proceed)")
     while 0 == 0 and mvnt != 0:
         if mvnt == "S" or mvnt == "s":
             room5(inventory)
@@ -913,7 +912,7 @@ def room4(inventory):
     typing("\nA cavern deeper that you can see is before you with another natural bridge crossing it close to the ceiling.")   
     time.sleep(2)
     typing("\nAs you begin to cross a sound catches you from behind.")
-    time.sleep(2)
+    time.sleep(5)
     clrscrn()
 
     battle_sequence(enemylist,char,inventory,boss)  
@@ -927,7 +926,7 @@ def room4(inventory):
         typing("You found a attack potion on the fallen "+str(epickname)+"\n")
         inventory["ATKpotion"] += 1
         
-    mvnt = input("(Type N or E to proceed)")
+    mvnt = input("To the East there is a charred walled track. To the North there is a damp and humid passage. Which way will you go?\n(Type E or N to proceed)")
     while 0 == 0 and mvnt != 0:
         if mvnt == "N" or mvnt == "n":
             room2(inventory)
@@ -963,7 +962,7 @@ def room5(inventory):
     typing("\nA cracking sound originates from one of the stone caskets as the lid drops to the floor.")   
     time.sleep(2)
     typing("\nNext to the container you see it.")
-    time.sleep(2)
+    time.sleep(5)
     clrscrn()
 
     battle_sequence(enemylist,char,inventory,boss)
@@ -1014,7 +1013,7 @@ def room6(inventory):
     typing("\nA crash behind you forces you to start and turn.")   
     time.sleep(2)
     typing("\nIn the shadows of soot it appears.")
-    time.sleep(2)
+    time.sleep(5)
     clrscrn()
 
     battle_sequence(enemylist,char,inventory,boss)
@@ -1028,7 +1027,7 @@ def room6(inventory):
         typing("You found a attack potion on the fallen "+str(epickname)+"\n")
         inventory["ATKpotion"] += 1
 
-    mvnt = input("(THE BOSS ROOM IS TO THE NORTH Type W or E OR N to proceed)")
+    mvnt = input("THE BOSS ROOM IS TO THE NORTH. There are other rooms to your West and East. You can always come back and fight the boss later. Which way will you go?\n(Type E or N to proceed")
     while 0 == 0 and mvnt != 0:
         if mvnt == "N" or mvnt == "n":
             bossroom()
@@ -1044,7 +1043,8 @@ def room6(inventory):
 def bossroom():
 
     clrscrn()
-    print ("THIS IS THE BOSS BITCH") #tell the player which room they are in    
+    print ("THIS IS THE BOSS BITCH") 
+    #tell the player which room they are in    
     time.sleep(2)
     clrscrn()
     time.sleep(2)
