@@ -65,7 +65,7 @@ def start():
      ###    ### ########## ########## ########  ###    ###    ###          ###     ### ###    #### #########         ########  ###    #### ########## ###     ### ###    ###    ###    ''')            
     time.sleep(5)
     print ("\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n")
-    #loop to get input needed to enter the game
+#loop to get input needed to enter the game
     go = input("Please Press Enter to Begin\n")
     while 0 == 0 and go != 0:
         if go == ("") or go ==  (""):
@@ -77,7 +77,7 @@ def start():
                 go = input()
 
 def title_screen_select():
-    #loop to get the correct input from the title_screen so that the player cannot type anything and freeze the game
+#loop to get the correct input from the title_screen so that the player cannot type anything and freeze the game
     option = input()
     while 0 == 0 and option != 0:
         if option == ("play") or option ==  ("Play"):
@@ -1044,7 +1044,7 @@ def bossroom():
 
     clrscrn()
     print ("THIS IS THE BOSS BITCH") 
-    #tell the player which room they are in    
+#tell the player which room they are in    
     time.sleep(2)
     clrscrn()
     time.sleep(2)
