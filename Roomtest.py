@@ -502,7 +502,7 @@ def battle_sequence(enemylist,char,inventory):
             typing("You have died"+"\n")
 
 
-def room1():
+def room1(inventory):
 #the lair
     clrscrn()
     global room
@@ -536,18 +536,18 @@ def room1():
 
     item_find = random.randint(0,2)
     if item_find == 1:
-        typing("You found a health potion on the fallen "+str(epickname))
+        typing("You found a health potion on the fallen "+str(epickname)+"\n")
         inventory["HPpotion"] += 1
     elif item_find == 2:
-        typing("You found a attack potion on the fallen "+str(epickname))
+        typing("You found a attack potion on the fallen "+str(epickname)+"\n")
         inventory["ATKpotion"] += 1
         
     mvnt = input("to your East there is a big black door, its open.\nTo your West there is a dark corridor, which way will you go?\n(Type E or W to proceed)")
     while 0 == 0 and mvnt != 0:
         if mvnt == "E" or mvnt == "e":
-            room3()
+            room3(inventory)
         elif mvnt == "W" or mvnt == "w":
-            room2()
+            room2(inventory)
         elif mvnt != ("E") or mvnt != ("e") or mvnt != ("W") or mvnt !=  ("w"):
             print("please enter a valid command")
             mvnt == 0
@@ -555,7 +555,7 @@ def room1():
     clrscrn()
  
  
-def room2():
+def room2(inventory):
 #the cavern
     clrscrn()
     global room
@@ -586,20 +586,20 @@ def room2():
     battle_sequence(enemylist, char, inventory)
     print ("congratulations you have defeted the " +str(epickname) +" under the caverns.")
     
-    item_find = random.randint(0,1,2)
+    item_find = random.randint(0,2)
     if item_find == 1:
-        typing("You found a health potion on the fallen "+str(epickname))
+        typing("You found a health potion on the fallen "+str(epickname)+"\n")
         inventory["HPpotion"] += 1
     elif item_find == 2:
-        typing("You found a attack potion on the fallen "+str(epickname))
+        typing("You found a attack potion on the fallen "+str(epickname)+"\n")
         inventory["ATKpotion"] += 1
         
     mvnt = input("(Type S or E to proceed)")
     while 0 == 0 and mvnt != 0:
         if mvnt == "S" or mvnt == "s":
-            room4()
+            room4(inventory)
         elif mvnt == "E" or mvnt == "e":
-            room1()
+            room1(inventory)
         elif mvnt != ("E") or mvnt != ("e") or mvnt != ("S") or mvnt !=  ("s"):
             print("please enter a valid command")
             mvnt == 0
@@ -607,7 +607,7 @@ def room2():
     
 
 
-def room3():
+def room3(inventory):
 #the Grotto
     clrscrn()
     global room
@@ -638,27 +638,27 @@ def room3():
     battle_sequence(enemylist, char, inventory)
     print ("congratulations you have defeted the " +str(epickname) +" inside the grotto.")
 
-    item_find = random.randint(0,1,2)
+    item_find = random.randint(0,2)
     if item_find == 1:
-        typing("You found a health potion on the fallen "+str(epickname))
+        typing("You found a health potion on the fallen "+str(epickname)+"\n")
         inventory["HPpotion"] += 1
     elif item_find == 2:
-        typing("You found a attack potion on the fallen "+str(epickname))
+        typing("You found a attack potion on the fallen "+str(epickname)+"\n")
         inventory["ATKpotion"] += 1
         
     mvnt = input("(Type S or W to proceed)")
     while 0 == 0 and mvnt != 0:
         if mvnt == "S" or mvnt == "s":
-            room5()
+            room5(inventory)
         elif mvnt == "W" or mvnt == "w":
-            room1()
+            room1(inventory)
         elif mvnt != ("W") or mvnt != ("w") or mvnt != ("S") or mvnt !=  ("s"):
             print("please enter a valid command")
             mvnt == 0
             mvnt = input()
     
 
-def room4():
+def room4(inventory):
 #the gorge
     clrscrn()
     global room
@@ -689,26 +689,26 @@ def room4():
     battle_sequence(enemylist, char, inventory)  
     print ("congratulations you have defeted the " +str(epickname) +" in the gorge.")
 
-    item_find = random.randint(0,1,2)
+    item_find = random.randint(0,2)
     if item_find == 1:
-        typing("You found a health potion on the fallen "+str(epickname))
+        typing("You found a health potion on the fallen "+str(epickname)+"\n")
         inventory["HPpotion"] += 1
     elif item_find == 2:
-        typing("You found a attack potion on the fallen "+str(epickname))
+        typing("You found a attack potion on the fallen "+str(epickname)+"\n")
         inventory["ATKpotion"] += 1
         
     mvnt = input("(Type N or E to proceed)")
     while 0 == 0 and mvnt != 0:
         if mvnt == "N" or mvnt == "n":
-            room2()
+            room2(inventory)
         elif mvnt == "E" or mvnt == "e":
-            room6()
+            room6(inventory)
         elif mvnt != ("E") or mvnt != ("e") or mvnt != ("N") or mvnt !=  ("n"):
             print("please enter a valid command")
             mvnt == 0
             mvnt = input()
 
-def room5():
+def room5(inventory):
 #the Tomb
     clrscrn()
     global room
@@ -739,20 +739,20 @@ def room5():
     battle_sequence(enemylist, char, inventory)
     print ("congratulations you have defeted the " +str(epickname) +" in the tomb.")
 
-    item_find = random.randint(0,1,2)
+    item_find = random.randint(0,2)
     if item_find == 1:
-        typing("You found a health potion on the fallen "+str(epickname))
+        typing("You found a health potion on the fallen "+str(epickname)+"\n")
         inventory["HPpotion"] += 1
     elif item_find == 2:
-        typing("You found a attack potion on the fallen "+str(epickname))
+        typing("You found a attack potion on the fallen "+str(epickname)+"\n")
         inventory["ATKpotion"] += 1
 
     mvnt = input("(Type N or W to proceed)")
     while 0 == 0 and mvnt != 0:
         if mvnt == "N" or mvnt == "n":
-            room3()
+            room3(inventory)
         elif mvnt == "W" or mvnt == "w":
-            room6()
+            room6(inventory)
         elif mvnt != ("W") or mvnt != ("w") or mvnt != ("N") or mvnt !=  ("n"):
             print("please enter a valid command")
             mvnt == 0
@@ -760,7 +760,7 @@ def room5():
     clrscrn()
 
 
-def room6():
+def room6(inventory):
 #the scorched chambers
     clrscrn()
     global room
@@ -791,12 +791,12 @@ def room6():
     battle_sequence(enemylist, char, inventory)
     print ("congratulations you have defeted the " +str(epickname) +" within the scorched chamber.")
 
-    item_find = random.randint(0,1,2)
+    item_find = random.randint(0,2)
     if item_find == 1:
-        typing("You found a health potion on the fallen "+str(epickname))
+        typing("You found a health potion on the fallen "+str(epickname)+"\n")
         inventory["HPpotion"] += 1
     elif item_find == 2:
-        typing("You found a attack potion on the fallen "+str(epickname))
+        typing("You found a attack potion on the fallen "+str(epickname)+"\n")
         inventory["ATKpotion"] += 1
 
     mvnt = input("(THE BOSS ROOM IS TO THE NORTH Type W or E OR N to proceed)")
@@ -804,9 +804,9 @@ def room6():
         if mvnt == "N" or mvnt == "n":
             bossroom()
         elif mvnt == "W" or mvnt == "w":
-            room4()
+            room4(inventory)
         elif mvnt == "E" or mvnt == "e":
-            room5()
+            room5(inventory)
         elif mvnt != ("W") or mvnt != ("w") or mvnt != ("N") or mvnt != ("n") or mvnt != ("E") or mvnt !=  ("e"):
             print("please enter a valid command")
             mvnt == 0
@@ -841,4 +841,5 @@ enemylist = {
 #inventory dictionary
 inventory = {'HPpotion':10, 'ATKpotion':10}
 
-room1()
+
+room1(inventory)
