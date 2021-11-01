@@ -159,10 +159,9 @@ def endscr():
     elif redo == ("2"):
         os.system(exit)
 
+
 def prologue(char):
 #base stats prior to class selection come from char(stats)
-    
-    char = {'HP':10,'ATK':10,'DEF':10,'LVL':1,'XP':0,'LVLNEXT':10}
 
 #get a PC name logged and recorded
     typing ("Welcome adventurer.\n")
@@ -500,9 +499,9 @@ def battle_sequence(enemylist,char,inventory,boss):
             print("\nPlayer HP:       " + str(HP) + "/" + str(char["HP"]))
             print("Player Armor:    " + str(DEF) + "/" + str(char["DEF"])+"\n")
             print("\nPLAYERS TURN\n")
-            print(ehp)
-            print(edef)
-            print(eatk)
+            #print(ehp)
+            #print(edef)
+            #print(eatk)
 
             print("Choose your action:")
             print("1 Attack         " + str(ATK))
@@ -590,9 +589,9 @@ def battle_sequence(enemylist,char,inventory,boss):
             print("\nPlayer HP:       " + str(HP) + "/" + str(char["HP"]))
             print("Player Armor:    " + str(DEF) + "/" + str(char["DEF"])+"\n\n")
             print("OPPONENTS TURN\n")
-            print(ehp)
-            print(edef)
-            print(eatk)
+            #print(ehp)
+            #print(edef)
+            #print(eatk)
 
             time.sleep(1)
             opponent_randomiser1 = random.randint(0,1)
@@ -659,9 +658,9 @@ def battle_sequence(enemylist,char,inventory,boss):
                     print("\nPlayer HP:       " + str(HP) + "/" + str(char["HP"]))
                     print("Player Armor:    " + str(DEF) + "/" + str(char["DEF"])+ "\n")
                     print("\nPLAYERS TURN\n")
-                    print(ehp)
-                    print(edef)
-                    print(eatk)
+                    #print(ehp)
+                    #print(edef)
+                    #print(eatk)
 
                     print("\nChoose your action:")
                     print("1 Attack         " + str(ATK))
