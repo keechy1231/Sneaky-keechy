@@ -37,6 +37,7 @@ def prologue(char):
 
     typing("Welcome to The Starter, are you ready for a text based RPG experience?\n")
     time.sleep(2)
+    time.sleep(2)
     typing("Of course you are. Great lets start!\n")
     time.sleep(1)
     #player name
@@ -46,11 +47,7 @@ def prologue(char):
     typing ("\n\nVery nice to meet you " + pcname +", now i think its time for you to meet your trusty companion.\nNo RPG is the same without a companion, even a text based one.\n")
     time.sleep(1)
 
-    with open('Animals1.txt', "r") as file:
-        lines = file.readlines()
-        dewi = lines[random.randint(0, len(lines)-1)]
-
-    typing("Lets introduce you to Dewi.\nDewi will be your trusted companion.\nWhat is Dewi I hear you ask? Well he is a " +dewi+"\n\n")
+    typing("Lets introduce you to Dewi.\nDewi will be your trusted companion.\nWhat is Dewi I hear you ask? Well he is a Belgian Shepard\n\n")
 
     #class selection
     typing("Now then " + pcname + ", now for the important bit, which class best suits you?\n1.Warrior\n2.Thief\n3.Soilder\n\n\n")
