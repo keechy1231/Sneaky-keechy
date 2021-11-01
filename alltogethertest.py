@@ -1039,7 +1039,7 @@ def room6(inventory):
         typing("You found a attack potion on the fallen "+str(epickname)+"\n")
         inventory["ATKpotion"] += 1
 
-    mvnt = input("THE BOSS ROOM IS TO THE NORTH. There are other rooms to your West and East. You can always come back and fight the boss later. Which way will you go?\n(Type E or N to proceed")
+    mvnt = input("THE BOSS ROOM IS TO THE NORTH. There are other rooms to your West and East. You can always come back and fight the boss later. Which way will you go?\n(Type E or N or W to proceed")
     while 0 == 0 and mvnt != 0:
         if mvnt == "N" or mvnt == "n":
             bossroom()
