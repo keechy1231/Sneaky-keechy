@@ -233,11 +233,11 @@ def level(char,):
 #take xp away from lvlnext to get new xp value
         char['LVLNEXT'] = round(char['LVLNEXT'] * 1.2) 
 #make lvlnext xp increase as the char levels up
-        char['ATK'] +=5
+        char['ATK'] +=13
 #increase base atk stat
-        char['DEF'] +=5
+        char['DEF'] +=13
 #increase base def stat
-        char['HP'] +=5
+        char['HP'] +=13
 #increase base HP stat
         if char["XP"] < char["LVLNEXT"]: 
 #once the char can level no more output the below to show new stats. 
