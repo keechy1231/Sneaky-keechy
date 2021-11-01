@@ -56,28 +56,67 @@ def title_screen_select():
         elif option == ("Credits") or option ==  ("credits"):
                 credits()
         elif option == ("Exit")or option == ("exit"):
-                sys.exit()
+                endscr()
         elif option != ("Play") or option != ("play") or option != ("Credits") or option !=  ("credits") or option != ("Exit") or option != ("exit"):
                 typing ("please input valid command\n")
                 option = 0
-        option = input
-    
+        option = input()
     
     
 def title_screen():
-    print ("")
+    print (''' 
+                                                                                    dMMP'
+                                                                                    MMM:
+                                                                                    YMMb.
+                                                                                     YMMMb.
+                                                                                      `YMM/|Mb.  ,__
+                                                                                   _,,-~`--..-~-'_,/`--,,,____
+                                                                               `\,_,/',_.-~_..-~/' ,/---~~~"""`\
+\n                                                                         _,_,,,\p\p/'    \,,-~'_,/`````-,7.
+                                                                         `@v@`\\,,,,__   \,,-~~"__/` ",,/MMMMb.
+                                                                          `--''_..-~~\   \,-~~""  `\_,/ `^YMMMMMb..
+                                                                           ,|``-~~--./_,,_  _,,-~~'/_      `YMMMMMMMb.
+                                                                         ,/  `\,_,,/`\    `\,___,,,/M/'      `YMMMMMMMb
+                                                                                     ;  _,,/__...|MMM/         YMMMMMMMb
+                                                                                      .' /'      dMMM\         !MMMMMMMMb
+                                                                                   ,-'.-'""~~~--/M|M' \        !MMMMMMMMM
+                                                                                 ,/ .|...._____/MMM\   b       gMMMMMMMMM
+                                                                              ,'/'\/          dMMP/'   M.     ,MMMMMMMMMP
+                                                                              / `\;/~~~~----...MP'     ,MMb..,dMMMMMMMMM'
+                                                                            / ,_  |          _/      dMMMMMMMMMMMMMMMMB
+                                                                            \  |\,\,,,,___ _/    _,dMMMMMMMMMMMP".emmmb,
+                                                                             `.\  gY.     /      7MMMMMMMMMMP"..emmMMMMM
+                                                                                .dMMMb,-..|       `.~~"""```|dMMMMP'MMP'
+                                                                               .MMMMP^"""/ .7 ,  _  \,---~""`^YMMP'MM;
+                                                                             _dMMMP'   ,' / | |\ \\  }          PM^M^b
+                                                                          _,' _,  \_.._`./  } ; \ \``'      __,'_` _  `._
+                                                                      ,-~/'./'| 7`,,__,}`   ``   ``        // _/`| 7``-._`}
+                                                                     |_,}__{  {,/'   ``                    `\{_  {,/'   ``
+                                                                     ``  ```   ``                            ``   ``
+
+
+                                                    ████████╗██╗░░██╗███████╗  ░██████╗████████╗░█████╗░██████╗░████████╗███████╗██████╗░
+                                                    ╚══██╔══╝██║░░██║██╔════╝  ██╔════╝╚══██╔══╝██╔══██╗██╔══██╗╚══██╔══╝██╔════╝██╔══██╗
+                                                    ░░░██║░░░███████║█████╗░░  ╚█████╗░░░░██║░░░███████║██████╔╝░░░██║░░░█████╗░░██████╔╝
+                                                    ░░░██║░░░██╔══██║██╔══╝░░  ░╚═══██╗░░░██║░░░██╔══██║██╔══██╗░░░██║░░░██╔══╝░░██╔══██╗
+                                                    ░░░██║░░░██║░░██║███████╗  ██████╔╝░░░██║░░░██║░░██║██║░░██║░░░██║░░░███████╗██║░░██║
+                                                    ░░░╚═╝░░░╚═╝░░╚═╝╚══════╝  ╚═════╝░░░░╚═╝░░░╚═╝░░╚═╝╚═╝░░╚═╝░░░╚═╝░░░╚══════╝╚═╝░░╚═╝                                                                 
+                                                                 
+''')
+
+    print(" ")
     print("")
     print(" ")
-    print("                                                  ###############################################################################################")
+    print("                                                  ###########################################################################################")
     print("                                                                                             Play")
     print("                                                                                           Credits")
     print("                                                                                             Exit")
-    print("                                                  ###############################################################################################")
+    print("                                                  ###########################################################################################")
     title_screen_select()
     
 def deathseq():
      #if (char['HP'] <= 0):
-        print ("You have been slain")
+        print ("You have been slain by the" + enemy_pick)
         time.sleep(4)
         endscr()
 
@@ -92,20 +131,5 @@ def endscr():        #endscreen for when you die
     elif redo == ("2"):
         credits()
     
-def credits():#credits for when you die and or chose them at the begining
-    clrscrn()
-    print ("Thank you for playing our game, this is our first attempt and we have no prior coding experience.\n\n\nA lot of help was gathered from github, youtube, x3 and stackoverflow.\n\n\nBattle Mechanics made by Jason Mutter\nLeveling System made by Tomas Keech\nStory made by Jason Mutter\nRoom Design made by Tomas Keech\n\nWe both worked very hard on this little game and we hope you enjoy it")
-    back = input ("\n\n\nPress Enter to return to Title Screen, Or type exit to exit")
-    while 0 == 0 and back != 0:
-        if back == (""):
-            clrscrn()
-            title_screen()
-        elif back == ("exit") or back == ("Exit"):
-            os.system (exit)
-        else:
-            print("Press Enter to return to Title Screen")
-            back = 0
-            back = input()
-
 
 title_screen()
