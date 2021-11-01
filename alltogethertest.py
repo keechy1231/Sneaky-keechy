@@ -39,7 +39,7 @@ def credits():
         elif back == ("exit") or back == ("Exit"):
             os.system (exit)
         else:
-            print("Press Enter to return to Title Screen")
+            print("Press Enter to return to Title Screen\n")
             back = 0
             back = input()
 
@@ -221,6 +221,7 @@ def prologue(char):
     
 
     typing("So are you ready for an adventure then? \nStep forward, through this door your first room awaits. " + pcname + ".\n")
+    time.sleep(3)
     room1(inventory)
 
 def level(char,): 
