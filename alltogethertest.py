@@ -462,6 +462,7 @@ def battle_sequence(enemylist,char,inventory,boss):
     expgain = epick["expgain"]
     emhp = epick["ehp"]
     emdef = epick["edef"]
+    ematk = epick["eatk"]
 
     if boss["boss_room"] != 1:
         ehp *=  round((char["HP"]+char["DEF"]+char["ATK"])/3)
@@ -469,6 +470,7 @@ def battle_sequence(enemylist,char,inventory,boss):
         edef *= round((char["HP"]+char["DEF"]+char["ATK"])/3)
         emhp *= round((char["HP"]+char["DEF"]+char["ATK"])/3)
         emdef *= round((char["HP"]+char["DEF"]+char["ATK"])/3)
+        ematk *= round((char["HP"]+char["DEF"]+char["ATK"])/3)
 
         ehp = int(ehp)
         eatk = int(eatk)
@@ -1098,5 +1100,5 @@ boss = {'ehp':150, 'eatk':150, 'edef':150, 'expgain':9001,'boss_room':0}
 
 
 #game starts here
-#title_screen()
-bossroom()
+title_screen()
+
