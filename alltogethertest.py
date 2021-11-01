@@ -500,9 +500,9 @@ def battle_sequence(enemylist,char,inventory,boss):
             print("\nPlayer HP:       " + str(HP) + "/" + str(char["HP"]))
             print("Player Armor:    " + str(DEF) + "/" + str(char["DEF"])+"\n")
             print("\nPLAYERS TURN\n")
-            print(epick["ehp"])
-            print(epick["edef"])
-            print(epick["eatk"])
+            print(ehp)
+            print(edef)
+            print(eatk)
 
             print("Choose your action:")
             print("1 Attack         " + str(ATK))
@@ -590,9 +590,9 @@ def battle_sequence(enemylist,char,inventory,boss):
             print("\nPlayer HP:       " + str(HP) + "/" + str(char["HP"]))
             print("Player Armor:    " + str(DEF) + "/" + str(char["DEF"])+"\n\n")
             print("OPPONENTS TURN\n")
-            print(epick["ehp"])
-            print(epick["edef"])
-            print(epick["eatk"])
+            print(ehp)
+            print(edef)
+            print(eatk)
 
             time.sleep(1)
             opponent_randomiser1 = random.randint(0,1)
@@ -659,9 +659,9 @@ def battle_sequence(enemylist,char,inventory,boss):
                     print("\nPlayer HP:       " + str(HP) + "/" + str(char["HP"]))
                     print("Player Armor:    " + str(DEF) + "/" + str(char["DEF"])+ "\n")
                     print("\nPLAYERS TURN\n")
-                    print(epick["ehp"])
-                    print(epick["edef"])
-                    print(epick["eatk"])
+                    print(ehp)
+                    print(edef)
+                    print(eatk)
 
                     print("\nChoose your action:")
                     print("1 Attack         " + str(ATK))
@@ -1099,4 +1099,5 @@ boss = {'ehp':150, 'eatk':150, 'edef':150, 'expgain':9001,'boss_room':0}
 
 
 #game starts here
-title_screen()
+#title_screen()
+room1(inventory)
