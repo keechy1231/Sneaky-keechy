@@ -12,19 +12,9 @@ def typing(text):
     for character in text:
         sys.stdout.write(character)
         sys.stdout.flush()
-        time.sleep(0.05)
+        time.sleep(0.03)
         
-def ftyping(text):
-    for character in text:
-        sys.stdout.write(character)
-        sys.stdout.flush()
-        time.sleep(0.04)
-        
-def styping(text):
-    for character in text:
-        sys.stdout.write(character)
-        sys.stdout.flush()
-        time.sleep(0.08)
+
         
 def clrscrn():
     if os.name == 'posix':
@@ -35,7 +25,7 @@ def clrscrn():
 def start():
     clrscrn()
     time.sleep(3)        
-    ftyping ("Welcome to The Starter.  A text based RPG made by two people who have no coding experience.\n\n\n\n\nCreated by;\n")
+    typing ("Welcome to The Starter.  A text based RPG made by two people who have no coding experience.\n\n\n\n\nCreated by;\n")
     time.sleep(1)
     print ( '''
      :::    ::: :::::::::: :::::::::: ::::::::  :::    ::: :::   :::           :::     ::::    ::: :::::::::         ::::::::  ::::    ::: ::::::::::     :::     :::    ::: :::   ::: 
@@ -85,8 +75,8 @@ def title_screen():
     print("                                                  ###############################################################################################")
     title_screen_select()
     
- def deathseq():
-    if (char['HP'] <= 0):
+def deathseq():
+     #if (char['HP'] <= 0):
         print ("You have been slain")
         time.sleep(4)
         endscr()
