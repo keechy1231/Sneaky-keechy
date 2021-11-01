@@ -1099,5 +1099,5 @@ boss = {'ehp':150, 'eatk':150, 'edef':150, 'expgain':9001,'boss_room':0}
 
 
 #game starts here
-#title_screen()
-room1(inventory)
+title_screen()
+
