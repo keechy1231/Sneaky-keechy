@@ -25,13 +25,12 @@ char = {'LVL': 1,
          'DEF': 10,
          'HP' : 10}
 
-def prologue(char):
-    #base stats prior to class selection come from char(stats)
-    import random
-    lines = open('Animals1.txt').read().splitlines()
-    dewi = random.choice(lines)
-    
 
+
+def prologue(char):
+    
+    #base stats prior to class selection come from char(stats)
+    
     #get a PC name logged and recorded
     typing ("Welcome adventurer.\n")
     time.sleep(1)
@@ -46,7 +45,12 @@ def prologue(char):
     time.sleep(1)
     typing ("\n\nVery nice to meet you " + pcname +", now i think its time for you to meet your trusty companion.\nNo RPG is the same without a companion, even a text based one.\n")
     time.sleep(1)
-    typing("Lets introduce you to Dewi.\nDewi will be your trusted companion.\nWhat is Dewi I hear you ask? well he is a " +dewi+"\n\n")
+
+    with open('Animals1.txt', "r") as file:
+        lines = file.readlines()
+        dewi = lines[random.randint(0, len(lines)-1)]
+
+    typing("Lets introduce you to Dewi.\nDewi will be your trusted companion.\nWhat is Dewi I hear you ask? Well he is a " +dewi+"\n\n")
 
     #class selection
     typing("Now then " + pcname + ", now for the important bit, which class best suits you?\n1.Warrior\n2.Thief\n3.Soilder\n\n\n")
@@ -86,8 +90,9 @@ def prologue(char):
 
     time.sleep(5)
     clrscrn()
+    
 
-    typing("So are you ready for an adventure then? \nOf course you are why else would you be here " + pcname + ".\n")
+    typing("So are you ready for an adventure then? \nStep forward, through this door your first room awaits. " + pcname + ".\n")
     room1()
 
 
