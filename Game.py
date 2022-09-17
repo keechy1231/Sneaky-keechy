@@ -31,13 +31,13 @@ def credits():
      +#+  +#+   +#+        +#+       +#+        +#+    +#+    +#+          +#+     +#+ +#+  +#+#+# +#+    +#+              +#+ +#+  +#+#+# +#+        +#+     +#+ +#+  +#+      +#+    
      #+#   #+#  #+#        #+#       #+#    #+# #+#    #+#    #+#          #+#     #+# #+#   #+#+# #+#    #+#       #+#    #+# #+#   #+#+# #+#        #+#     #+# #+#   #+#     #+#    
      ###    ### ########## ########## ########  ###    ###    ###          ###     ### ###    #### #########         ########  ###    #### ########## ###     ### ###    ###    ###    ''')
-    back = input ("\n\n\n\n\n\n\nPress Enter to return to Title Screen, Or type exit to exit")
+    back = input ("\n\n\n\n\n\n\nPress Enter to return to Title Screen, Or type exit to exit  ").lower()
     while 0 == 0 and back != 0:
         if back == (""):
             clrscrn()
             title_screen()
-        elif back == ("exit") or back == ("Exit"):
-            os.system (exit)
+        elif back == ("exit"):
+            sys.exit()
         else:
             print("Press Enter to return to Title Screen\n")
             back = 0
@@ -80,13 +80,13 @@ def title_screen_select():
 #loop to get the correct input from the title_screen so that the player cannot type anything and freeze the game
     option = input()
     while 0 == 0 and option != 0:
-        if option == ("play") or option ==  ("Play"):
+        if option.lower() == ("play"):
                 start()
-        elif option == ("Credits") or option ==  ("credits"):
+        elif option.lower() == ("credits"):
                 credits()
-        elif option == ("Exit")or option == ("exit"):
+        elif option.lower() == ("exit"):
                 endscr()
-        elif option != ("Play") or option != ("play") or option != ("Credits") or option !=  ("credits") or option != ("Exit") or option != ("exit"):
+        elif option.lower != ("play") or option.lower() != ("credits") or option.lower() != ("exit"):
                 typing ("please input valid command\n")
                 option = 0
         option = input()
@@ -153,11 +153,13 @@ def deathseq():
 #function to replay the game or exit after you die
 def endscr():        
     clrscrn()
-    redo = input ("Thank you for playing our game, If you would like to play again press 1, to exit press 2\n") 
-    if redo == ("1"):
-        title_screen()
-    elif redo == ("2"):
-        os.system(exit)
+    while True:
+        redo = input ("Thank you for playing our game, If you would like to play again press 1, to exit press 2\n")
+        if redo == ("1"):
+            title_screen()
+        elif redo == ("2"):
+            sys.exit()
+            
 
 
 def prologue(char):
